@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Next Gen Asset Selector</title>
+    <script src="https://experience.adobe.com/solutions/CQ-assets-selectors/assets/resources/assets-selectors.js"/>
+</head>
+<body>
+<div style="width: 800px; height: 800px">
+    <h1 style="text-align: center"> Asset Selector </h1>
+    <div id='asset-selector'></div>
+</div>
+<script>
+    function openAssetSelector() {
+        // container element on which you want to render the AssetSelector/DestinationSelector component
+        const container = document.getElementById('asset-selector');
+
+        const props = {
+            imsOrg: '2FBC7B975CFE21C40A495FBB@AdobeOrg',
+            imsToken: "eyJhbGciOiJSUzI1NiIsIng1dSI6Imltc19uYTEta2V5LWF0LTEuY2VyIiwia2lkIjoiaW1zX25hMS1rZXktYXQtMSIsIml0dCI6ImF0In0.eyJpZCI6IjE2ODcyNzgzMTM0NzFfNzBmOTQ0MmItZWMxYS00NDk0LTk1MjEtNDUxMzBiY2E0Yzk5X3VlMSIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJjbGllbnRfaWQiOiJkZXYtY29uc29sZS1wcm9kIiwidXNlcl9pZCI6IjgwOUQxRjU0NjMxQzEzNEMwQTQ5NUUyRUA4MjllMWViYjYzMWMwNGNmNDk1YzYwLmUiLCJzdGF0ZSI6IkdqeEtyZk84TXJFeHM5T1dwbjBTdlRBYiIsImFzIjoiaW1zLW5hMSIsImFhX2lkIjoiMDc4QzNFOTA1MjRDOUE1RTBBNDkwRDQ1QEFkb2JlSUQiLCJjdHAiOjAsImZnIjoiWFJMM1RZWkFYUFA3TVA0S0dNUVYzWEFBSDQ9PT09PT0iLCJzaWQiOiIxNjg3Mjc4MzEyOTI1X2ZjNDU1YjIxLTUzOTItNDNlOS1iMGMwLWQ5ODRhNDBjMGE5NV91ZTEiLCJydGlkIjoiMTY4NzI3ODMxMzQ3Ml9mMjg3NjdkNi04YzU2LTQ5N2UtOWZiZC04NmFkMjBhOWYxYjVfdWUxIiwibW9pIjoiYTY0Yzc4YSIsInBiYSI6Ik1lZFNlY05vRVYsTG93U2VjIiwicnRlYSI6IjE2ODg0ODc5MTM0NzIiLCJleHBpcmVzX2luIjoiODY0MDAwMDAiLCJjcmVhdGVkX2F0IjoiMTY4NzI3ODMxMzQ3MSIsInNjb3BlIjoiQWRvYmVJRCxvcGVuaWQscmVhZF9vcmdhbml6YXRpb25zLGFkZGl0aW9uYWxfaW5mby5wcm9qZWN0ZWRQcm9kdWN0Q29udGV4dCJ9.CnybfrAqOT5DXFm_K0c4oVE9jNeNRsaej-j7IxZs30mpO5lyeR7Mvuw3-Zh_hE08uIUSOTDMlArH8-XxB4n3vD_MbEWKogVodjuSD9dloq1tAskhMtcq-p2iy13B3laNBFW3TzNvPPCmbTZRIPZyIVGo1LI3AVDXPyF0D4G3Boh85kGhnbmYqvnh6QFMGTBdzADATfzXF5kYgBOyrIlhDmUCY-c2alXEkAOuiY2Qmh1t_a0fXpl2f2PnA5YtXIrEqVYkxzprm3AvK_pluxGW3cpwgbJC04NCNp48gyG34CUxGXKe4VeXEy1Ylk1XTDYDQmfsaynKtQWbjZcDcun9WA"
+        }
+
+        PureJSSelectors.renderAssetSelector(container, props);
+    }
+
+    openAssetSelector();
+</script>
+</body>
+</html>
