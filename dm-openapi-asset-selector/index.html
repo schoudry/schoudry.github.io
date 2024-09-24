@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Next Gen Asset Selector</title>
+</head>
+<body>
+<div style="width: 100%; height: 100%">
+    <h1 style="text-align: center; color: red"> Asset Selector </h1>
+    <div id='asset-selector'></div>
+</div>
+<script src="https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/assets-selectors.js"></script>
+<script>
+    function openAssetSelector() {
+        let imsInstance = null;
+
+        let imsProps = {
+            imsClientId: "<obtained from IMS team>",
+            imsScope: "openid, <other scopes>",
+            redirectUrl: window.location.href, // redirect url to be used for ims flow, if empty it will use the registered redirect url for the client id.
+            modalMode: true, // false to open in a full page reload flow
+            adobeImsOptions: {
+                modalSettings: {
+                    allowOrigin: window.location.origin,
+                },
+                useLocalStorage: true,
+            },
+            onImsServiceInitialized: (service) => {
+                // invoked when the ims service is initialized and is ready
+                console.log("onImsServiceInitialized", service);
+            },
+            onAccessTokenReceived: (token) => {
+                console.log("onAccessTokenReceived", token);
+            },
+            onAccessTokenExpired: () => {
+                console.log("onAccessTokenError");
+            },
+            onErrorReceived: (type, msg) => {
+                console.log("onErrorReceived", type, msg);
+            },
+        }
+
+        function load() {
+            const registeredTokenService = PureJSSelectors.registerAssetsSelectorsAuthService(imsProps);
+            imsInstance = registeredTokenService;
+        }
+
+        load();
+
+        const assetSelectorProps = {
+            aemTierType: ["delivery"],
+            imsOrg: 'xxxx@AdobeOrg',
+            hideTreeNav: true
+        };
+
+        const container = document.getElementById('asset-selector');
+
+        PureJSSelectors.renderAssetSelectorWithAuthFlow (container, assetSelectorProps);
+    }
+
+    openAssetSelector();
+</script>
+</body>
+</html>
