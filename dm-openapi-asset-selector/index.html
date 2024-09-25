@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Next Gen Asset Selector</title>
+    <title>Dynamic Media Open API Asset Selector</title>
 </head>
 <body>
 <div style="width: 100%; height: 100%">
@@ -14,7 +14,7 @@
 
         let imsProps = {
             imsClientId: "<obtained from IMS team>",
-            imsScope: "openid, <other scopes>",
+            imsScope: "openid",
             redirectUrl: window.location.href, // redirect url to be used for ims flow, if empty it will use the registered redirect url for the client id.
             modalMode: true, // false to open in a full page reload flow
             adobeImsOptions: {
