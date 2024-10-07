@@ -16,6 +16,7 @@
 <script>
     function openAssetSelector() {
         let imsInstance = null;
+        const ASS_DIV_SEL = "asset-selector-select";
 
         let imsProps = {
             imsClientId: "aemcs-verizon-assetselector",
@@ -28,19 +29,10 @@
                 },
                 useLocalStorage: true,
             },
-            onImsServiceInitialized: (service) => {
-                // invoked when the ims service is initialized and is ready
-                console.log("onImsServiceInitialized", service);
-            },
-            onAccessTokenReceived: (token) => {
-                console.log("onAccessTokenReceived", token);
-            },
-            onAccessTokenExpired: () => {
-                console.log("onAccessTokenError");
-            },
-            onErrorReceived: (type, msg) => {
-                console.log("onErrorReceived", type, msg);
-            },
+            onImsServiceInitialized: (service) => {},
+            onAccessTokenReceived: (token) => {},
+            onAccessTokenExpired: () => {},
+            onErrorReceived: (type, msg) => {},
         }
 
         function load() {
@@ -49,10 +41,23 @@
         }
 
         function handleSelection(selectedAssets) {
-            console.log("-----------", selectedAssets);
+            let assDiv = document.getElementById(ASS_DIV_SEL);
+            let firstAsset = selectedAssets[0], assetContent = "";
+
+            for(const key in firstAsset){
+                if(typeof firstAsset[key] !== "string"){
+                    continue;
+                }
+
+                assetContent = assetContent + key + "<br>";
+            }
+
+            assDiv.innerHTML = assetContent;
         }
 
         load();
+
+        handleSelection([ { a: "b", c: "d"} ]);
 
         const assetSelectorProps = {
             aemTierType: ["delivery"],
