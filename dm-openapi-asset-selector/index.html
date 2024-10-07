@@ -3,9 +3,14 @@
     <title>Dynamic Media Open API Asset Selector</title>
 </head>
 <body>
+<h1 style="text-align: center; color: red">Dynamic Media Asset Selector with imsClientId</h1>
 <div style="width: 100%; height: 100%">
-    <h1 style="text-align: center; color: red">Dynamic Media Asset Selector with imsClientId</h1>
-    <div id='asset-selector'></div>
+    <div id='asset-selector' style="width: 50%; float: left; ">
+        Left Div
+    </div>
+    <div id='asset-selector-select' style="margin-left: 50%; padding: 15px; height: 100%; background: #EEE;">
+        Login, Select asset(s) in left pane and click "Select"...
+    </div>
 </div>
 <script src="https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/assets-selectors.js"></script>
 <script>
@@ -43,13 +48,17 @@
             imsInstance = registeredTokenService;
         }
 
+        function handleSelection(selectedAssets) {
+            console.log("-----------", selectedAssets);
+        }
+
         load();
 
         const assetSelectorProps = {
             aemTierType: ["delivery"],
             imsOrg: '2FBC7B975CFE21C40A495FBB@AdobeOrg',
             repositoryId: "delivery-p10961-e880305.adobeaemcloud.com",
-            hideTreeNav: false
+            hideTreeNav: false, handleSelection
         };
 
         const container = document.getElementById('asset-selector');
