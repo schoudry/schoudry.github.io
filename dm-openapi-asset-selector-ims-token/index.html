@@ -12,6 +12,11 @@
     function registerAssetSelector(){
         const apiToken = queryParameters().imsToken;
 
+        if(!apiToken) {
+            alert("IMS Token is required");
+            return;
+        }
+
         alert(apiToken);
 
         function handleSelection(selection) {
