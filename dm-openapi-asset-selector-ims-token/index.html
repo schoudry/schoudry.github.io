@@ -12,6 +12,11 @@
     function registerAssetSelector(){
         const apiToken = queryParameters().imsToken;
 
+        if(!apiToken) {
+            alert("IMS Token is required");
+            return;
+        }
+
         alert(apiToken);
 
         function handleSelection(selection) {
@@ -22,9 +27,11 @@
             console.log("initializing Asset Selector");
 
             const props = {
+                //"repositoryId": "author-p10961-e880305.adobeaemcloud.com",
                 "repositoryId": "delivery-p10961-e880305.adobeaemcloud.com",
                 "apiKey": "asset_search_service",
-                "imsOrg": "2FBC7B975CFE21C40A495FBB@AdobeOrg",
+                //"imsOrg": "2FBC7B975CFE21C40A495FBB@AdobeOrg",
+                "imsOrg": "777B575E55828EBB7F000101@AdobeOrg",
                 "imsToken": apiToken,
                 handleSelection,
                 hideTreeNav: true
@@ -45,10 +52,6 @@
             params = document.location.search.split(/\?|\&/);
 
         params.forEach( function(it) {
-            if (_.isEmpty(it)) {
-                return;
-            }
-
             param = it.split("=");
             result[param[0]] = param[1];
         });
