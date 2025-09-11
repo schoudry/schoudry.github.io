@@ -10,7 +10,9 @@
 <script src="https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/assets-selectors.js"></script>
 <script>
     function registerAssetSelector(){
-        const apiToken = "";
+        const apiToken = queryParameters().imsToken;
+
+        alert(apiToken);
 
         function handleSelection(selection) {
             console.log("Selected asset: ", selection);
@@ -36,6 +38,22 @@
         window.addEventListener("load", (event) => {
             renderAssetSelectorInline();
         });
+    }
+
+    function queryParameters() {
+        let result = {}, param,
+            params = document.location.search.split(/\?|\&/);
+
+        params.forEach( function(it) {
+            if (_.isEmpty(it)) {
+                return;
+            }
+
+            param = it.split("=");
+            result[param[0]] = param[1];
+        });
+
+        return result;
     }
 
     registerAssetSelector();
