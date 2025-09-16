@@ -19,7 +19,7 @@
         const ASS_DIV_SEL = "asset-selector-select";
 
         let imsProps = {
-            imsClientId: "aemcs-verizon-assetselector",
+            imsClientId: "aemcs-verizon-assetselector", // this is provided by Adobe raising a P2 support ticket
             imsScope: "openid",
             redirectUrl: window.location.href, // redirect url to be used for ims flow, if empty it will use the registered redirect url for the client id.
             modalMode: true, // false to open in a full page reload flow
@@ -57,10 +57,17 @@
 
         load();
 
-        const assetSelectorProps = {
+        /*const assetSelectorProps = {
             aemTierType: ["delivery"],
             imsOrg: '2FBC7B975CFE21C40A495FBB@AdobeOrg',
             repositoryId: "delivery-p10961-e880305.adobeaemcloud.com",
+            hideTreeNav: false, handleSelection
+        };*/
+
+        const assetSelectorProps = {
+            aemTierType: ["author"],
+            imsOrg: '2FBC7B975CFE21C40A495FBB@AdobeOrg',
+            repositoryId: "author-p10961-e880305.adobeaemcloud.com",
             hideTreeNav: false, handleSelection
         };
 
