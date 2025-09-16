@@ -29,10 +29,18 @@
                 },
                 useLocalStorage: true,
             },
-            onImsServiceInitialized: (service) => {},
-            onAccessTokenReceived: (token) => {},
-            onAccessTokenExpired: () => {},
-            onErrorReceived: (type, msg) => {},
+            onImsServiceInitialized: (service) => {
+                console.log("ExperienceAEM: onImsServiceInitialized", service);
+            },
+            onAccessTokenReceived: (token) => {
+                console.log("ExperienceAEM: onAccessTokenReceived", token);
+            },
+            onAccessTokenExpired: () => {
+                console.log("ExperienceAEM: onAccessTokenExpired");
+            },
+            onErrorReceived: (type, msg) => {
+                console.log("ExperienceAEM: onErrorReceived", type, msg);
+            },
         }
 
         function load() {
@@ -57,19 +65,19 @@
 
         load();
 
-        const assetSelectorProps = {
+        /*const assetSelectorProps = {
             aemTierType: ["delivery"],
             imsOrg: '2FBC7B975CFE21C40A495FBB@AdobeOrg',
             repositoryId: "delivery-p10961-e880305.adobeaemcloud.com",
             hideTreeNav: false, handleSelection
-        };
+        };*/
 
-        /*const assetSelectorProps = {
+        const assetSelectorProps = {
             aemTierType: ["author"],
             imsOrg: '2FBC7B975CFE21C40A495FBB@AdobeOrg',
             repositoryId: "author-p10961-e880305.adobeaemcloud.com",
             hideTreeNav: false, handleSelection
-        };*/
+        };
 
         const container = document.getElementById('asset-selector');
 
