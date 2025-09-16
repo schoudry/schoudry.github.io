@@ -29,10 +29,18 @@
                 },
                 useLocalStorage: true,
             },
-            onImsServiceInitialized: (service) => {},
-            onAccessTokenReceived: (token) => {},
-            onAccessTokenExpired: () => {},
-            onErrorReceived: (type, msg) => {},
+            onImsServiceInitialized: (service) => {
+                console.log("ExperienceAEM: onImsServiceInitialized", service);
+            },
+            onAccessTokenReceived: (token) => {
+                console.log("ExperienceAEM: onAccessTokenReceived", token);
+            },
+            onAccessTokenExpired: () => {
+                console.log("ExperienceAEM: onAccessTokenExpired");
+            },
+            onErrorReceived: (type, msg) => {
+                console.log("ExperienceAEM: onErrorReceived", type, msg);
+            },
         }
 
         function load() {
