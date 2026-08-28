@@ -3598,5 +3598,701 @@
       "Deploy-time configuration only applies to the Starter plan"
     ],
     "correct": 0
+  },
+  {
+    "id": 301,
+    "category": "architecture",
+    "question": "Which bin/magento command lists all currently registered modules along with their enabled/disabled status?",
+    "options": [
+      "module:status",
+      "module:list",
+      "setup:db:status",
+      "app:config:status"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 302,
+    "category": "architecture",
+    "question": "Which command should be run after adding or changing a module's di.xml, plugin, or class to regenerate interception/factory code ahead of deployment?",
+    "options": [
+      "setup:di:compile",
+      "cache:flush",
+      "indexer:reindex",
+      "cron:run"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 303,
+    "category": "architecture",
+    "question": "Which command deploys minified/merged static view files (CSS, JS, fonts) for use in production mode?",
+    "options": [
+      "setup:static-content:deploy",
+      "setup:upgrade",
+      "setup:db-schema:upgrade",
+      "app:config:import"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 304,
+    "category": "architecture",
+    "question": "Which command exports the current app/etc/config.php-managed configuration into a shareable file, useful for promoting configuration between environments?",
+    "options": [
+      "app:config:dump",
+      "config:show",
+      "setup:upgrade",
+      "module:enable"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 305,
+    "category": "architecture",
+    "question": "Which command applies configuration previously exported with app:config:dump to another environment?",
+    "options": [
+      "app:config:import",
+      "app:config:dump",
+      "setup:install",
+      "cache:flush"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 306,
+    "category": "architecture",
+    "question": "What is the purpose of bin/magento indexer:reindex compared to bin/magento indexer:reset?",
+    "options": [
+      "reindex actually recalculates and repopulates index data; reset only marks indexers as invalid/needing a rebuild without doing the rebuild itself",
+      "They are exact synonyms with identical behavior",
+      "reset deletes the database entirely",
+      "reindex only works in developer mode"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 307,
+    "category": "architecture",
+    "question": "Which command switches a Magento instance between developer, production, and default application modes?",
+    "options": [
+      "deploy:mode:set",
+      "setup:upgrade",
+      "module:enable",
+      "cache:enable"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 308,
+    "category": "architecture",
+    "question": "Which command is used specifically to create a new admin user from the command line?",
+    "options": [
+      "admin:user:create",
+      "customer:create",
+      "setup:admin-user:create",
+      "user:add"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 309,
+    "category": "architecture",
+    "question": "What is the primary purpose of Adobe Commerce's URL Rewrite system?",
+    "options": [
+      "To let a product, category, or CMS page's URL change while automatically redirecting requests made to the old URL to the new one",
+      "To rewrite raw SQL queries for performance",
+      "To translate URLs into other languages automatically",
+      "To block search engine crawlers from indexing certain pages"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 310,
+    "category": "architecture",
+    "question": "Which database table stores Magento's URL rewrite entries (mapping request paths to target paths)?",
+    "options": [
+      "url_rewrite",
+      "catalog_url_rewrite",
+      "core_url_rewrite",
+      "seo_rewrite"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 311,
+    "category": "architecture",
+    "question": "What does the 'redirect_type' column on a URL rewrite entry (e.g. 301 vs 0) control?",
+    "options": [
+      "Whether the old URL performs a permanent (301) redirect to the new one, or simply resolves without an explicit redirect (0, typically for the canonical/generated path)",
+      "The character encoding used for that URL",
+      "Which store view the rewrite applies to",
+      "The cache lifetime for that specific page"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 312,
+    "category": "architecture",
+    "question": "Which admin path is used to manually add, edit, or remove a URL rewrite for a specific product, category, or CMS page?",
+    "options": [
+      "Marketing > SEO & Search > URL Rewrites",
+      "Catalog > Products > URL Settings",
+      "Stores > Configuration > URL Rewrites",
+      "System > Tools > URL Rewrites"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 313,
+    "category": "architecture",
+    "question": "What commonly triggers Magento to automatically regenerate catalog URL rewrites for a product?",
+    "options": [
+      "Changing the product's URL key, or reassigning it to different categories, triggers regeneration of its associated rewrites",
+      "URL rewrites are entirely static and never regenerate automatically under any circumstance",
+      "Only running a dedicated CLI command manually regenerates them, never an admin save",
+      "Clearing the cache alone regenerates all URL rewrites"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 314,
+    "category": "architecture",
+    "question": "Which core module is primarily responsible for building and rendering the Admin panel's own page structure, navigation, and layout?",
+    "options": [
+      "Magento_Backend",
+      "Magento_Adminhtml (legacy alias concept folded into Backend/area conventions)",
+      "Magento_Cms",
+      "Magento_Theme"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 315,
+    "category": "architecture",
+    "question": "What determines which layout XML handles apply specifically to Admin panel pages, as opposed to storefront pages?",
+    "options": [
+      "The 'adminhtml' area code, which scopes layout, di.xml, and other configuration separately from 'frontend'",
+      "Admin pages use the exact same layout handles as the storefront with no distinction",
+      "A special database flag on each page determines area, unrelated to code structure",
+      "Admin layout is hardcoded in PHP with no XML involved at all"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 316,
+    "category": "architecture",
+    "question": "Which base class do most Admin grid/form container blocks ultimately extend, historically, before UI Components became the standard approach?",
+    "options": [
+      "Magento\\Backend\\Block\\Widget\\Grid\\Container (and related Widget classes)",
+      "Magento\\Framework\\View\\Element\\Template only",
+      "Magento\\Framework\\Model\\AbstractModel",
+      "Magento\\Catalog\\Model\\Product"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 317,
+    "category": "architecture",
+    "question": "What role does Magento\\Backend\\Model\\Menu\\Builder play in Admin panel architecture?",
+    "options": [
+      "It assembles the final Admin navigation menu tree by merging every enabled module's menu.xml declarations, respecting parent/child nesting and ACL visibility",
+      "It builds SQL queries for admin grids",
+      "It compiles admin theme CSS",
+      "It manages admin user password hashing"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 318,
+    "category": "architecture",
+    "question": "Which concept determines the actual set of input fields shown when creating a new product in the Admin panel?",
+    "options": [
+      "The product's assigned Attribute Set, which groups a specific collection of attributes together as a reusable template",
+      "The current admin user's role permissions alone",
+      "The store's default currency",
+      "The product's assigned website only"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 319,
+    "category": "architecture",
+    "question": "What is the relationship between an Attribute Set and Attribute Groups?",
+    "options": [
+      "An Attribute Set is made up of one or more Attribute Groups, each of which organizes a subset of attributes together under a labeled tab in the product edit form",
+      "Attribute Groups and Attribute Sets are the exact same concept with different names",
+      "Attribute Groups exist only for Customer entities, never Products",
+      "An Attribute Set can only contain exactly one Attribute Group by design"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 320,
+    "category": "architecture",
+    "question": "If a new custom attribute is created but never added to any Attribute Set (or Attribute Group), what is the practical effect for a merchant filling out the Admin product form?",
+    "options": [
+      "The attribute will not appear anywhere on the product edit form until it is explicitly assigned to at least one Attribute Set/Group, even though it exists as a valid EAV attribute",
+      "The attribute automatically appears on every product form regardless of attribute set assignment",
+      "The attribute becomes permanently unusable and must be deleted and recreated",
+      "It only affects the storefront display, never the Admin form"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 321,
+    "category": "customizations",
+    "question": "A merchant wants a single product page that lets the shopper pick a size and color, with each combination tracked as separate inventory. Which product type fits best?",
+    "options": [
+      "Configurable product",
+      "Virtual product",
+      "Grouped product",
+      "Bundle product with no options"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 322,
+    "category": "customizations",
+    "question": "What uniquely distinguishes each variation (e.g. Small/Red vs Large/Blue) underneath a configurable product?",
+    "options": [
+      "Each variation is its own separate simple product with a unique SKU, individually trackable in inventory",
+      "All variations share a single SKU and stock quantity",
+      "Variations exist only as text labels with no underlying product entity",
+      "Variations can only be distinguished by price, not SKU"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 323,
+    "category": "customizations",
+    "question": "Which product type is most appropriate for selling a non-tangible item such as an extended warranty or a digital subscription?",
+    "options": [
+      "Virtual product",
+      "Configurable product",
+      "Grouped product",
+      "Bundle product"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 324,
+    "category": "customizations",
+    "question": "Can a Virtual product be included as part of a Bundle or Configurable product?",
+    "options": [
+      "Yes, virtual products can be sold individually or included within Grouped, Configurable, or Bundle product types",
+      "No, virtual products can only ever be sold standalone",
+      "Only Bundle products can contain virtual products, never Configurable",
+      "Virtual products cannot be added to any composite product type"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 325,
+    "category": "customizations",
+    "question": "What is the purpose of Category Permissions in Adobe Commerce?",
+    "options": [
+      "To restrict which customer groups can view a category, see its prices, add its products to cart, or be redirected to a specific landing page instead",
+      "To control which admin users can edit a category's name",
+      "To determine which currency displays on a category page",
+      "To restrict which countries a category ships to"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 326,
+    "category": "customizations",
+    "question": "What is the function of the Root Category assigned to a Store?",
+    "options": [
+      "It acts as the container at the top of the category tree that determines which categories/products appear in that store's main navigation menu",
+      "It determines the store's default language",
+      "It sets the store's base currency",
+      "It has no functional effect on navigation and is purely organizational"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 327,
+    "category": "customizations",
+    "question": "Can the same Root Category (and its underlying products) be assigned to more than one Store within the same Website?",
+    "options": [
+      "Yes, a root category can be assigned to the current store or to any other store within the same website",
+      "No, each store must always have a completely unique, non-shared root category",
+      "Root categories can only be assigned to exactly one store across the entire installation, ever",
+      "Root category assignment is only possible at the Website level, never the Store level"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 328,
+    "category": "customizations",
+    "question": "Which Admin configuration path controls Shopping Cart behavior such as redirect-to-cart-after-add and minimum order amount?",
+    "options": [
+      "Stores > Configuration > Sales > Checkout > Shopping Cart",
+      "Stores > Configuration > General > Cart",
+      "Catalog > Categories > Cart Settings",
+      "Customers > Cart Configuration"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 329,
+    "category": "customizations",
+    "question": "What does the 'Minimum Order Amount' setting under Sales configuration actually enforce?",
+    "options": [
+      "It requires the cart subtotal to reach a configured threshold before the customer is permitted to complete checkout",
+      "It sets the minimum price allowed for any single product",
+      "It limits how many items can be added to a single order",
+      "It controls the minimum shipping charge, not the cart total"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 330,
+    "category": "customizations",
+    "question": "Which configuration area defines Tax Rules, combining product class, customer class, and tax rate?",
+    "options": [
+      "Stores > Taxes > Tax Rules (with supporting Tax Rates and Tax Classes configuration)",
+      "Sales > Tax > Rules Engine",
+      "System > Tax > Rate Manager",
+      "Stores > Configuration > Catalog > Tax"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 331,
+    "category": "customizations",
+    "question": "How does Adobe Commerce determine which Tax Rule applies to a given line item in the cart?",
+    "options": [
+      "It matches the product's tax class and the customer's tax class against configured tax rules, combined with the relevant region (based on shipping/billing address or origin)",
+      "It always applies a single flat global tax rate regardless of location or product",
+      "Tax rules are determined solely by the store's default currency",
+      "Tax is calculated only based on the customer's browser locale, ignoring address"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 332,
+    "category": "customizations",
+    "question": "Which REST endpoint most closely replicates the search experience a shopper or guest would get from the storefront's own search bar?",
+    "options": [
+      "GET V1/search",
+      "GET V1/products",
+      "GET V1/categories/search",
+      "GET V1/customers/search"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 333,
+    "category": "customizations",
+    "question": "Which REST endpoint returns results more similar to what an admin user sees on the Products grid page rather than storefront search results?",
+    "options": [
+      "GET V1/products",
+      "GET V1/search",
+      "GET V1/catalog/search",
+      "GET V1/store/products"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 334,
+    "category": "customizations",
+    "question": "What must a client application do before it can successfully call a protected Adobe Commerce Web API endpoint?",
+    "options": [
+      "Obtain an access token (e.g. via the integration/admin/customer token endpoint) and supply it on subsequent API calls to authenticate the request",
+      "Nothing; all Web API endpoints are open by default with no authentication required",
+      "Install a browser extension provided by Adobe",
+      "Only IP-based allowlisting is used; tokens are never required"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 335,
+    "category": "customizations",
+    "question": "Which of the following best describes the purpose of API input limiting (e.g. restricting page size or number of requested resources)?",
+    "options": [
+      "To help mitigate denial-of-service (DoS) risk by preventing a single request from demanding an excessive amount of data or processing",
+      "To reduce the visual complexity of the Admin grid UI only",
+      "To enforce currency conversion rules on API responses",
+      "To control which languages an API response can be returned in"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 336,
+    "category": "customizations",
+    "question": "What must be configured before an Adobe Commerce instance can use SaaS-powered features like Catalog Service or Live Search?",
+    "options": [
+      "The Commerce Services Connector must be configured with production and sandbox API keys and the correct Data Space, one time per instance",
+      "Nothing; SaaS services work automatically with no configuration",
+      "Only a database schema change is required, with no API keys involved",
+      "SaaS services require a completely separate Magento installation"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 337,
+    "category": "customizations",
+    "question": "Once the Commerce Services Connector is configured for one SaaS feature (e.g. Catalog Service), does it need to be reconfigured for another SaaS feature (e.g. Live Search) on the same instance?",
+    "options": [
+      "No \u2014 the connector only needs to be configured once per instance to enable multiple Commerce Services SaaS features",
+      "Yes, every individual SaaS feature requires its own completely separate connector setup from scratch",
+      "SaaS features cannot coexist on the same instance under any configuration",
+      "Reconfiguration is required every time a new product is added to the catalog"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 338,
+    "category": "customizations",
+    "question": "Which Adobe product is commonly referenced for A/B testing storefront experiences alongside Adobe Commerce?",
+    "options": [
+      "Adobe Target",
+      "Adobe Analytics Workspace",
+      "Adobe Experience Manager",
+      "Adobe Campaign"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 339,
+    "category": "customizations",
+    "question": "Which of the following is a best practice specifically called out for writing Observers, given they run dynamically injected into the application's execution flow?",
+    "options": [
+      "Keep observer logic lightweight and defensive, since poorly written observers can introduce instability or break core application flow they're injected into",
+      "Observers should always contain heavy, synchronous, unbounded logic since performance is not a concern",
+      "Observers cannot throw exceptions under any circumstance",
+      "Observers must always modify the event's dispatching object directly with no other pattern allowed"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 340,
+    "category": "cloud",
+    "question": "In the Adobe Commerce on Cloud Infrastructure Pro architecture, which environment type is deployed to Platform as a Service (PaaS) containers rather than dedicated infrastructure?",
+    "options": [
+      "Master and Integration",
+      "Staging and Production",
+      "Only Production",
+      "All four environment types run on identical dedicated IaaS infrastructure"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 341,
+    "category": "cloud",
+    "question": "Which two environment types in the Pro architecture run on dedicated Infrastructure as a Service (IaaS) containers rather than shared PaaS containers?",
+    "options": [
+      "Staging and Production",
+      "Master and Integration",
+      "Only Integration",
+      "Only Master"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 342,
+    "category": "cloud",
+    "question": "How many active branches can the Integration environment type support in the Pro architecture?",
+    "options": [
+      "Up to two active branches (the main integration branch plus one additional branch) deployed to PaaS containers",
+      "Only ever exactly one branch, with no additional branches possible",
+      "An unlimited number of branches with no cap",
+      "Integration does not support branches at all; it is a single fixed environment"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 343,
+    "category": "cloud",
+    "question": "Which environment in the Pro architecture provides the single branch that is deployed to PaaS containers and typically represents the primary integrated development line?",
+    "options": [
+      "Master",
+      "Staging",
+      "Production",
+      "Sandbox"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 344,
+    "category": "cloud",
+    "question": "What is the primary purpose of Auto Scaling on Adobe Commerce Cloud infrastructure?",
+    "options": [
+      "To automatically add or remove infrastructure resources in response to demand, balancing performance against cost",
+      "To automatically scale product images to different resolutions",
+      "To automatically increase the number of admin users allowed",
+      "To automatically scale the number of Composer packages installed"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 345,
+    "category": "cloud",
+    "question": "Which architecture type must a Cloud project be configured with in order to use Auto Scaling?",
+    "options": [
+      "A Scaled architecture specifically; auto scaling is not available on every architecture configuration",
+      "Any architecture, since auto scaling is universally enabled by default",
+      "Only the Starter plan supports auto scaling, never Pro",
+      "Auto scaling requires a completely separate, non-Magento infrastructure product"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 346,
+    "category": "cloud",
+    "question": "Where can outgoing emails be enabled or disabled for Integration (and Staging, for Starter projects) environments on Adobe Commerce Cloud?",
+    "options": [
+      "From the Cloud Console or via the command line",
+      "Only by contacting Adobe support directly via a ticket with no self-service option",
+      "Only through a Fastly VCL snippet",
+      "Emails cannot be toggled per environment under any circumstance"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 347,
+    "category": "cloud",
+    "question": "Why might a developer specifically want to enable outgoing email on a lower environment like Integration, even though it isn't customer-facing production traffic?",
+    "options": [
+      "To allow features like two-factor authentication or password reset emails to function correctly for Cloud project users testing on that environment",
+      "Outgoing email has no legitimate use case on non-production environments",
+      "It is required before any code can be deployed to that environment at all",
+      "It only affects Fastly cache warming, not actual email delivery"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 348,
+    "category": "cloud",
+    "question": "Where are Adobe Commerce's performance testing data profiles (small, medium, large, extra large) located within the codebase?",
+    "options": [
+      "<magento_root>/setup/performance-toolkit/profiles/<ce|ee>",
+      "<magento_root>/var/performance/",
+      "<magento_root>/pub/media/performance/",
+      "<magento_root>/app/etc/performance.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 349,
+    "category": "cloud",
+    "question": "What is the purpose of adjusting the performance testing profile size (e.g. from small to extra large) before running a performance test?",
+    "options": [
+      "To generate a proportionally larger or smaller volume of sample data (products, customers, orders) so performance testing better reflects a specific target catalog/traffic scale",
+      "To change the visual theme used during the test only",
+      "To adjust the PHP version used during testing",
+      "Profile size only affects which language the test data is generated in"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 350,
+    "category": "cloud",
+    "question": "On Adobe Commerce Cloud, why is it recommended to break long-running tasks into smaller, queued tasks rather than one large synchronous cron job?",
+    "options": [
+      "Because cloud infrastructure projects using read-only environments typically allow only one cron job to run at a time on the web instance, so long single jobs can block other scheduled work",
+      "Long-running tasks are technically impossible to execute on Cloud infrastructure at all",
+      "Breaking tasks up is required only for GraphQL-related cron jobs specifically",
+      "It has no relationship to cron scheduling and is purely a coding style preference"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 351,
+    "category": "cloud",
+    "question": "What is an alternative to breaking a long-running task into smaller queued pieces, when the task fundamentally can't be easily chunked?",
+    "options": [
+      "Building a dedicated worker instance to handle that specific workload outside the constraints of the standard web instance's single-cron-at-a-time limitation",
+      "There is no alternative; the task must simply be abandoned",
+      "Switching the entire project to the Starter plan resolves this automatically",
+      "Disabling cron entirely and running everything manually via SSH forever"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 352,
+    "category": "cloud",
+    "question": "Which command-line tool is specifically used to manage Adobe Commerce Cloud projects, environments, and to run automation tasks locally, extending the Cloud Console's capabilities?",
+    "options": [
+      "The magento-cloud CLI",
+      "The bin/magento CLI exclusively, with no separate Cloud-specific tool",
+      "npm",
+      "composer"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 353,
+    "category": "cloud",
+    "question": "Which Starter/Pro plan detail correctly distinguishes typical usage of the magento-cloud CLI?",
+    "options": [
+      "It can be used to manage both Starter and Pro Integration environments after being installed locally",
+      "It only works with Pro plan projects and rejects any interaction with Starter projects",
+      "It requires a separate paid license beyond the Cloud subscription itself",
+      "It only functions when run directly on the Cloud servers via SSH, never from a local workstation"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 354,
+    "category": "cloud",
+    "question": "Why does the Adobe Commerce Cloud Pro model separate 'Integration' (PaaS) from 'Staging'/'Production' (dedicated IaaS) rather than running everything on identical infrastructure?",
+    "options": [
+      "It allows lower-cost, flexible infrastructure for iterative development/testing work while reserving dedicated, production-grade infrastructure for environments that must reliably handle real customer-scale traffic",
+      "There is no actual technical or cost distinction; the separation is purely cosmetic labeling",
+      "PaaS containers cannot run any version of Magento code, only static files",
+      "IaaS containers are only used for storing backups, never for running the application"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 355,
+    "category": "cloud",
+    "question": "If a team needs a second parallel line of in-progress development work beyond their primary Integration branch, what does the Pro architecture allow for this specific scenario?",
+    "options": [
+      "Creating one additional branch within Integration, supporting up to two active branches deployed to PaaS containers",
+      "Provisioning an entirely separate Production environment for every developer",
+      "This scenario is not supported at all on the Pro plan",
+      "Manually duplicating the Staging environment for every additional branch needed"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 356,
+    "category": "cloud",
+    "question": "Which of the following is an accurate reason a developer would use the Cloud CLI locally rather than only using the Cloud Console web UI?",
+    "options": [
+      "It enables scripting, automation, and local development workflows (like SSH access, environment branching, and variable management) that are more efficient than manual web UI clicks",
+      "The Cloud CLI can only display read-only information with no actionable commands",
+      "The Cloud Console has strictly more functionality than the CLI with nothing the CLI can do that the Console cannot",
+      "The CLI is only usable by Adobe employees, not customers"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 357,
+    "category": "cloud",
+    "question": "What is a reasonable interpretation of why 'read-only environments' specifically affect cron scheduling behavior mentioned for Cloud infrastructure projects?",
+    "options": [
+      "The application's filesystem being largely read-only at runtime is part of the same infrastructure model that also constrains how many concurrent cron processes can safely run on a given web instance",
+      "Read-only environments have no relationship whatsoever to cron behavior",
+      "Read-only refers only to the database being read-only, which is unrelated to cron entirely",
+      "It means cron jobs are permanently disabled on all Cloud projects"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 358,
+    "category": "cloud",
+    "question": "Which of the following activities is explicitly called out as commonly depending on at least one properly running cron job on Adobe Commerce?",
+    "options": [
+      "Catalog price rules, newsletters, Google sitemap generation, and customer back-in-stock/price-change alerts",
+      "Only full page cache flushing depends on cron; nothing else does",
+      "Cron is unrelated to any storefront-facing feature and only affects Admin UI cosmetics",
+      "Only Fastly VCL purging depends on cron"
+    ],
+    "correct": 0
   }
 ]

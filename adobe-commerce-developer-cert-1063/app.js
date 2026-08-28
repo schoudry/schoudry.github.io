@@ -510,7 +510,7 @@
         showScreen('landing');
       })
       .catch(function (err) {
-        els.quizQuestion.textContent = 'Could not load questions.json — check that it was uploaded alongside index.html.';
+        els.quizQuestionText.textContent = 'Could not load questions.json — check that it was uploaded alongside index.html.';
         console.error(err);
       });
   }
