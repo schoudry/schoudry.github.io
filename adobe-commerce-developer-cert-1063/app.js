@@ -34,6 +34,25 @@
     startTime: null
   };
 
+  var timerInterval = null;
+
+  function startTimer() {
+    stopTimer();
+    timerInterval = setInterval(function () {
+      var elapsed = Date.now() - state.startTime;
+      els.timerValue.textContent = formatElapsed(elapsed);
+    }, 1000);
+  }
+  function stopTimer() {
+    if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+  }
+  function formatElapsed(ms) {
+    var totalSec = Math.floor(ms / 1000);
+    var m = Math.floor(totalSec / 60);
+    var s = totalSec % 60;
+    return m + ':' + (s < 10 ? '0' + s : s);
+  }
+
   var els = {};
 
   function qs(id) { return document.getElementById(id); }
@@ -46,14 +65,17 @@
     els.resumeNote = qs('resume-note');
 
     els.progressFill = qs('progress-fill');
-    els.quizPosition = qs('quiz-position');
     els.quizCategoryTag = qs('quiz-category-tag');
     els.quizScoreLive = qs('quiz-score-live');
-    els.quizQuestion = qs('quiz-question');
+    els.quizNumber = qs('quiz-number');
+    els.quizQuestionText = qs('quiz-question-text');
     els.quizOptions = qs('quiz-options');
     els.quizFeedback = qs('quiz-feedback');
     els.btnPrev = qs('btn-prev');
     els.btnNext = qs('btn-next');
+    els.pagePill = qs('page-pill');
+    els.timerValue = qs('timer-value');
+    els.btnDownload = qs('btn-download');
 
     els.resultsScore = qs('results-score');
     els.resultsBanner = qs('results-banner');
@@ -198,6 +220,9 @@
     state.answers = state.set.map(function () { return { selectedIndex: null, isCorrect: null }; });
     state.score = 0;
     state.startTime = Date.now();
+    els.timerValue.textContent = '0:00';
+    updateDownloadButtonState();
+    startTimer();
     showScreen('quiz');
     renderQuestion();
   }
@@ -209,14 +234,15 @@
     var ans = state.answers[i];
 
     els.progressFill.style.width = (((i + 1) / total) * 100) + '%';
-    els.quizPosition.textContent = 'Q ' + pad2(i + 1) + ' / ' + total;
+    els.pagePill.textContent = 'Page: ' + (i + 1) + ' / ' + total;
 
     els.quizCategoryTag.textContent = CATEGORY_LABEL[q.category];
     els.quizCategoryTag.className = 'chip ' + CATEGORY_CHIP_CLASS[q.category];
 
     els.quizScoreLive.textContent = 'Score: ' + state.score;
 
-    els.quizQuestion.textContent = q.question;
+    els.quizNumber.textContent = pad2(i + 1) + '.';
+    els.quizQuestionText.textContent = ' ' + q.question;
 
     els.quizOptions.innerHTML = '';
     q.options.forEach(function (optText, optIdx) {
@@ -255,11 +281,99 @@
     var answered = ans.selectedIndex !== null;
     els.btnNext.disabled = !answered;
     els.btnNext.innerHTML = (i === total - 1)
-      ? '<span>See Results</span><span class="btn-arrow">→</span>'
-      : '<span>Next</span><span class="btn-arrow">→</span>';
+      ? 'Submit page <span class="nav-arrow">›</span>'
+      : 'Next page <span class="nav-arrow">›</span>';
   }
 
   function pad2(n) { return n < 10 ? '0' + n : String(n); }
+
+  function updateDownloadButtonState() {
+    var anyAnswered = state.answers.some(function (a) { return a.selectedIndex !== null; });
+    els.btnDownload.disabled = !anyAnswered;
+  }
+
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function downloadAnsweredQuestions() {
+    var answeredRows = [];
+    state.set.forEach(function (q, i) {
+      var ans = state.answers[i];
+      if (ans.selectedIndex === null) return;
+      answeredRows.push({ q: q, ans: ans, num: i + 1 });
+    });
+    if (answeredRows.length === 0) return;
+
+    var now = new Date();
+    var scoreSoFar = answeredRows.filter(function (r) { return r.ans.isCorrect; }).length;
+
+    var rowsHtml = answeredRows.map(function (r) {
+      var q = r.q, ans = r.ans;
+      var optionsHtml = q.options.map(function (opt, idx) {
+        var cls = '';
+        if (idx === q.correct) cls += ' correct-answer';
+        if (idx === ans.selectedIndex && idx !== q.correct) cls += ' wrong-answer';
+        if (idx === ans.selectedIndex) cls += ' selected';
+        var marker = idx === ans.selectedIndex ? '&#9679;' : '&#9675;';
+        return '<div class="opt' + cls + '"><span class="marker">' + marker + '</span>' + escapeHtml(opt) + '</div>';
+      }).join('');
+
+      return '' +
+        '<div class="q-block">' +
+        '<div class="q-head"><span class="q-num">' + pad2(r.num) + '.</span>' +
+        '<span class="q-cat cat-' + q.category + '">' + escapeHtml(CATEGORY_LABEL[q.category].replace(/^\d+\s·\s/, '')) + '</span>' +
+        '<span class="q-status ' + (ans.isCorrect ? 'status-correct' : 'status-wrong') + '">' + (ans.isCorrect ? 'Correct' : 'Incorrect') + '</span>' +
+        '</div>' +
+        '<p class="q-text">' + escapeHtml(q.question) + '</p>' +
+        '<div class="q-options">' + optionsHtml + '</div>' +
+        '</div>';
+    }).join('\n');
+
+    var doc = '' +
+      '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">' +
+      '<title>Adobe Commerce 1063 Practice Test — Answered Questions</title>' +
+      '<style>' +
+      'body{font-family:-apple-system,Inter,system-ui,sans-serif;background:#EEF1F4;color:#23282E;margin:0;padding:32px;}' +
+      '.wrap{max-width:760px;margin:0 auto;}' +
+      'h1{font-size:22px;margin:0 0 4px;}' +
+      '.meta{color:#6B7684;font-size:13px;margin:0 0 28px;}' +
+      '.q-block{background:#fff;border:1px solid #DCE1E7;border-radius:12px;padding:22px;margin-bottom:16px;}' +
+      '.q-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;}' +
+      '.q-num{font-weight:800;}' +
+      '.q-cat{font-size:11px;font-weight:700;color:#fff;padding:4px 10px;border-radius:999px;}' +
+      '.cat-architecture{background:#3E7CB1;} .cat-customizations{background:#B9791F;} .cat-cloud{background:#178778;}' +
+      '.q-status{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;margin-left:auto;}' +
+      '.status-correct{background:rgba(30,158,107,0.12);color:#1E9E6B;} .status-wrong{background:rgba(209,72,72,0.12);color:#D14848;}' +
+      '.q-text{font-size:15.5px;line-height:1.5;margin:0 0 14px;}' +
+      '.q-options{display:flex;flex-direction:column;gap:6px;}' +
+      '.opt{font-size:14px;padding:8px 10px;border-radius:7px;border:1px solid #DCE1E7;display:flex;gap:8px;align-items:flex-start;}' +
+      '.opt .marker{font-size:11px;margin-top:2px;color:#B7C0CA;}' +
+      '.opt.correct-answer{background:rgba(30,158,107,0.07);border-color:rgba(30,158,107,0.3);}' +
+      '.opt.correct-answer .marker{color:#1E9E6B;}' +
+      '.opt.wrong-answer{background:rgba(209,72,72,0.07);border-color:rgba(209,72,72,0.3);}' +
+      '.opt.wrong-answer .marker{color:#D14848;}' +
+      '</style></head><body><div class="wrap">' +
+      '<h1>Adobe Commerce 1063 Practice Test</h1>' +
+      '<p class="meta">Answered questions snapshot &middot; ' + escapeHtml(now.toLocaleString()) + ' &middot; Score so far: ' + scoreSoFar + ' / ' + answeredRows.length + '</p>' +
+      rowsHtml +
+      '</div></body></html>';
+
+    var blob = new Blob([doc], { type: 'text/html' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    var stamp = now.getFullYear() + pad2(now.getMonth() + 1) + pad2(now.getDate()) + '-' + pad2(now.getHours()) + pad2(now.getMinutes());
+    a.href = url;
+    a.download = 'adobe-commerce-1063-answers-' + stamp + '.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
 
   function handleAnswer(selectedIdx) {
     var i = state.index;
@@ -273,6 +387,7 @@
     if (isCorrect) state.score += 1;
 
     renderQuestion();
+    updateDownloadButtonState();
   }
 
   function renderFeedback(isCorrect) {
@@ -299,6 +414,7 @@
   }
 
   function finishTest() {
+    stopTimer();
     var endTime = Date.now();
     var durationMs = endTime - state.startTime;
     incAttempts();
@@ -377,6 +493,7 @@
     els.btnNext.addEventListener('click', goNext);
     els.btnPrev.addEventListener('click', goPrev);
     els.btnRetake.addEventListener('click', startTest);
+    els.btnDownload.addEventListener('click', downloadAnsweredQuestions);
   }
 
   function init() {

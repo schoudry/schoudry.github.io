@@ -11,12 +11,26 @@
 </head>
 <body>
 
-<div class="scanline"></div>
-
 <header class="topbar">
-  <div class="topbar-inner">
-    <span class="prompt-glyph">&gt;_</span>
-    <span class="topbar-label">1063 // PRACTICE-TEST</span>
+  <div class="topbar-left">
+    <button class="icon-btn" aria-hidden="true">
+      <span class="hamburger"><span></span><span></span><span></span></span>
+    </button>
+    <span id="page-pill" class="pill pill-page">Page: 1 / 50</span>
+    <span class="pill pill-ghost">Adobe Commerce 1063 Practice Test</span>
+  </div>
+  <div class="topbar-right">
+    <button id="btn-download" class="btn-download" title="Download all questions answered so far" disabled>
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="M6 11l6 6 6-6"/><path d="M5 21h14"/></svg>
+      <span>Download</span>
+    </button>
+    <div class="timer-badge">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <div>
+        <div class="timer-label">Elapsed</div>
+        <div id="timer-value" class="timer-value">0:00</div>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -25,7 +39,7 @@
   <!-- LANDING SCREEN -->
   <section id="screen-landing" class="screen screen-landing">
     <div class="landing-card">
-      <p class="eyebrow"><span class="eyebrow-dot"></span> Adobe Commerce Certification Prep</p>
+      <p class="eyebrow">Adobe Commerce Certification Prep</p>
       <h1 class="landing-title">Adobe Commerce for Developers<br><span class="landing-title-accent">Professional — 1063</span><br>Practice Test</h1>
       <p class="landing-help">Shows 50 questions (randomized out of 300), you need to answer 39 to clear the exam.</p>
 
@@ -37,7 +51,7 @@
 
       <button id="btn-take-test" class="btn-primary">
         <span>Take Test</span>
-        <span class="btn-arrow">→</span>
+        <span class="btn-arrow">›</span>
       </button>
 
       <p id="resume-note" class="resume-note hidden"></p>
@@ -51,21 +65,21 @@
         <div id="progress-fill" class="quiz-progress-fill"></div>
       </div>
       <div class="quiz-meta">
-        <span id="quiz-position" class="quiz-position">Q 01 / 50</span>
         <span id="quiz-category-tag" class="chip chip-a">Architecture</span>
         <span id="quiz-score-live" class="quiz-score-live">Score: 0</span>
       </div>
     </div>
 
     <div class="quiz-card">
-      <p id="quiz-question" class="quiz-question"></p>
+      <p id="quiz-question" class="quiz-question"><span id="quiz-number" class="quiz-number">01.</span><span id="quiz-question-text"></span></p>
       <div id="quiz-options" class="quiz-options"></div>
+      <p class="choose-hint">Choose 1 option.</p>
       <div id="quiz-feedback" class="quiz-feedback hidden"></div>
     </div>
 
     <div class="quiz-nav">
-      <button id="btn-prev" class="btn-secondary" disabled>← Previous</button>
-      <button id="btn-next" class="btn-primary" disabled>Next →</button>
+      <button id="btn-prev" class="btn-pill-nav" disabled><span class="nav-arrow">‹</span> Previous page</button>
+      <button id="btn-next" class="btn-pill-nav btn-pill-nav-primary" disabled>Next page <span class="nav-arrow">›</span></button>
     </div>
   </section>
 
