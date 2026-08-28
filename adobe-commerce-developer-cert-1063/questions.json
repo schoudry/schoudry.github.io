@@ -1,0 +1,3602 @@
+[
+  {
+    "id": 1,
+    "category": "architecture",
+    "question": "Which design pattern does Magento use to allow one class to modify the behavior of another class's public method without altering its source code?",
+    "options": [
+      "Plugin (interceptor)",
+      "Preference",
+      "Observer",
+      "Factory"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 2,
+    "category": "architecture",
+    "question": "What is the primary purpose of a Service Contract in Adobe Commerce?",
+    "options": [
+      "To define a stable, versioned API boundary between a module and its consumers",
+      "To register a new database table",
+      "To declare a module's dependencies",
+      "To configure the storefront theme"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 3,
+    "category": "architecture",
+    "question": "Which XML file is used to swap the entire implementation of an interface for a different class?",
+    "options": [
+      "di.xml (via <preference>)",
+      "events.xml",
+      "acl.xml",
+      "routes.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 4,
+    "category": "architecture",
+    "question": "In the Magento module load order, what determines which module's etc/di.xml settings take precedence when two modules configure the same type?",
+    "options": [
+      "The module sequence declared in module.xml and load order",
+      "Alphabetical order of the module name",
+      "The order modules were installed via Composer",
+      "File modification timestamp"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 5,
+    "category": "architecture",
+    "question": "Which of the following best describes the difference between a 'preference' and a 'plugin' in di.xml?",
+    "options": [
+      "A preference replaces an entire class implementation; a plugin intercepts specific methods of the original class",
+      "A preference only works in the frontend area; a plugin only works in adminhtml",
+      "A preference is used for database access; a plugin is used for templates",
+      "There is no functional difference"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 6,
+    "category": "architecture",
+    "question": "What is the correct order of plugin method types when multiple plugins target the same method?",
+    "options": [
+      "before -> around -> after, respecting sortOrder",
+      "after -> before -> around",
+      "around only, before and after are ignored",
+      "Plugins execute in random order"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 7,
+    "category": "architecture",
+    "question": "Which area-specific di.xml file would only apply configuration when Magento is running in the Admin panel?",
+    "options": [
+      "etc/adminhtml/di.xml",
+      "etc/frontend/di.xml",
+      "etc/webapi_rest/di.xml",
+      "etc/crontab.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 8,
+    "category": "architecture",
+    "question": "What is a 'virtual type' in di.xml primarily used for?",
+    "options": [
+      "Creating a new configuration of an existing class without creating a new PHP class file",
+      "Declaring a new database table",
+      "Registering a new REST endpoint",
+      "Defining a new admin menu item"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 9,
+    "category": "architecture",
+    "question": "Which of the following is NOT a valid Magento application area?",
+    "options": [
+      "frontend",
+      "adminhtml",
+      "webapi_rest",
+      "reporting"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 10,
+    "category": "architecture",
+    "question": "What is the main architectural reason Magento separates code into 'modules' rather than one monolithic application?",
+    "options": [
+      "To allow independent development, enabling, disabling, and reuse of discrete units of functionality",
+      "To improve database replication speed",
+      "To reduce the number of files in the vendor directory",
+      "To avoid using Composer"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 11,
+    "category": "architecture",
+    "question": "Which mechanism does Magento use to allow multiple modules to react to the same business event without modifying core code?",
+    "options": [
+      "The Observer pattern via events.xml",
+      "Preferences via di.xml",
+      "Data patches",
+      "UI Component data providers"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 12,
+    "category": "architecture",
+    "question": "What does the 'sequence' node inside module.xml control?",
+    "options": [
+      "The order in which modules are loaded relative to each other during setup and bootstrap",
+      "The order columns appear in a database table",
+      "The order menu items appear in Admin",
+      "The order CSS files are merged"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 13,
+    "category": "architecture",
+    "question": "In the request lifecycle, what is responsible for matching an incoming URL to a specific module and controller?",
+    "options": [
+      "The Front Controller and Router",
+      "The Object Manager",
+      "The Layout XML merger",
+      "The Session Manager"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 14,
+    "category": "architecture",
+    "question": "Which class is responsible for resolving and instantiating objects with their dependencies in Magento?",
+    "options": [
+      "Magento\\Framework\\ObjectManagerInterface",
+      "Magento\\Framework\\App\\RequestInterface",
+      "Magento\\Framework\\Registry",
+      "Magento\\Framework\\Event\\Manager"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 15,
+    "category": "architecture",
+    "question": "What is the key architectural benefit of Magento's EAV (Entity-Attribute-Value) model?",
+    "options": [
+      "It allows entities like products to have a flexible, variable set of attributes without schema changes",
+      "It guarantees faster read queries than a flat table",
+      "It removes the need for indexing",
+      "It eliminates the need for a database"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 16,
+    "category": "architecture",
+    "question": "Which of these is a valid reason to use an interface (Service Contract) instead of depending directly on a concrete class?",
+    "options": [
+      "It decouples consumers from implementation details, allowing the implementation to change without breaking callers",
+      "Interfaces execute faster at runtime than classes",
+      "Interfaces are required for all constructor arguments",
+      "Interfaces cannot have type hints"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 17,
+    "category": "architecture",
+    "question": "What triggers Magento's code generation (Factory, Proxy, Interceptor classes) under the generated/code directory?",
+    "options": [
+      "Requesting a class that follows a recognized naming convention (e.g. XFactory, X\\Proxy) that doesn't exist yet, or having a plugin declared",
+      "Manually running composer install",
+      "Editing a .phtml template",
+      "Restarting the web server"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 18,
+    "category": "architecture",
+    "question": "Which of the following best describes a 'Proxy' class in Magento's DI system?",
+    "options": [
+      "A lazy-loading wrapper that defers instantiation of an expensive dependency until it is actually used",
+      "A class that intercepts method calls for logging",
+      "A replacement for the entire Object Manager",
+      "A caching layer for database queries"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 19,
+    "category": "architecture",
+    "question": "What is the purpose of the Magento\\Framework\\App\\Area class / area code concept?",
+    "options": [
+      "It scopes configuration (di.xml, layout, translations) to a specific execution context like frontend, adminhtml, or webapi_rest",
+      "It defines geographic regions for tax calculation",
+      "It configures which currencies are enabled",
+      "It manages CDN routing"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 20,
+    "category": "architecture",
+    "question": "Which of the following is true about Full Page Cache (FPC) in Magento's architecture?",
+    "options": [
+      "Cacheable blocks are rendered and cached as static HTML; dynamic/private blocks are loaded separately via AJAX (Customer Data / private content)",
+      "FPC caches only database query results",
+      "FPC disables all dynamic content on cached pages",
+      "FPC is only available on Adobe Commerce Cloud"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 21,
+    "category": "architecture",
+    "question": "What is the role of Magento\\Framework\\Indexer\\ActionInterface implementations?",
+    "options": [
+      "They define how an indexer processes and rebuilds derived data (e.g. flat catalog data) for fast retrieval",
+      "They handle HTTP routing",
+      "They manage customer sessions",
+      "They render admin grids"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 22,
+    "category": "architecture",
+    "question": "Which statement best describes 'Update by Schedule' vs 'Update on Save' indexer modes?",
+    "options": [
+      "Update by Schedule queues changes and processes them via cron; Update on Save reindexes immediately and synchronously",
+      "Update by Schedule is faster for every single save operation",
+      "Update on Save disables the indexer entirely",
+      "There is no difference in production"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 23,
+    "category": "architecture",
+    "question": "In Magento's layered architecture, what is a Block primarily responsible for?",
+    "options": [
+      "Exposing data and logic to a template (.phtml) for rendering",
+      "Executing raw SQL queries directly against the database",
+      "Registering new Composer dependencies",
+      "Handling low-level HTTP headers"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 24,
+    "category": "architecture",
+    "question": "What does 'declarative schema' (db_schema.xml) replace from older versions of Magento?",
+    "options": [
+      "InstallSchema.php / UpgradeSchema.php scripts for defining database structure",
+      "The composer.json file",
+      "The registration.php file",
+      "The layout XML system"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 25,
+    "category": "architecture",
+    "question": "Which file defines the required entries an ACL resource must be added to before it takes effect for permission checks?",
+    "options": [
+      "etc/acl.xml",
+      "etc/di.xml",
+      "etc/events.xml",
+      "etc/webapi.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 26,
+    "category": "architecture",
+    "question": "What is the primary purpose of Magento's Message Queue Framework (MQF)?",
+    "options": [
+      "To process tasks asynchronously outside of the synchronous request/response cycle",
+      "To render page layout",
+      "To manage admin user sessions",
+      "To store product images"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 27,
+    "category": "architecture",
+    "question": "Which of the following correctly describes 'composite modules'?",
+    "options": [
+      "A structural concept where a set of related modules is grouped, but each remains independently manageable",
+      "A single PHP class that implements multiple interfaces",
+      "A module that has no dependencies",
+      "A deprecated Magento 1 concept with no Magento 2 equivalent"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 28,
+    "category": "architecture",
+    "question": "What does the term 'backward compatibility' mean in the context of Magento Service Contracts?",
+    "options": [
+      "Public interfaces should not have breaking changes across minor versions, so extensions built against them keep working",
+      "All code must run on PHP 5.6",
+      "Old themes automatically upgrade themselves",
+      "Database tables never change structure"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 29,
+    "category": "architecture",
+    "question": "Which architectural layer is responsible for translating a SearchCriteria object into an actual database query?",
+    "options": [
+      "The Repository implementation working with a Collection or Resource Model",
+      "The Block layer",
+      "The Layout XML merger",
+      "The Translation (i18n) engine"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 30,
+    "category": "architecture",
+    "question": "What is the purpose of the 'extension_attributes.xml' file?",
+    "options": [
+      "To add additional data fields to an existing entity's API data object without modifying the original interface",
+      "To register new admin menu items",
+      "To define database indexes",
+      "To configure caching types"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 31,
+    "category": "architecture",
+    "question": "Which statement about Magento's use of Composer is accurate?",
+    "options": [
+      "Magento uses Composer as its dependency management tool, with modules distributed as Composer packages",
+      "Composer is only used for JavaScript dependencies",
+      "Magento does not support Composer; it uses npm exclusively",
+      "Composer replaces the Object Manager"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 32,
+    "category": "architecture",
+    "question": "What is the function of the 'registration.php' file present in every module?",
+    "options": [
+      "It registers the module's existence and location with Magento's ComponentRegistrar so it can be discovered",
+      "It defines the module's database schema",
+      "It lists the module's Composer dependencies",
+      "It sets the module's version number for semantic versioning"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 33,
+    "category": "architecture",
+    "question": "Which of the following is the correct relationship between Magento_Catalog and a custom module that adds a product attribute via a data patch?",
+    "options": [
+      "The custom module should declare a dependency (sequence) on Magento_Catalog since it extends catalog functionality",
+      "No dependency is needed because attributes are unrelated to modules",
+      "The custom module must replace Magento_Catalog entirely",
+      "Dependencies are only needed for admin-facing modules"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 34,
+    "category": "architecture",
+    "question": "What is the main architectural difference between a Model and a Resource Model in Magento?",
+    "options": [
+      "A Model represents business data/behavior for a single entity; a Resource Model handles the actual database persistence logic",
+      "A Model only works in the frontend; a Resource Model only works in adminhtml",
+      "There is no difference, they are interchangeable terms",
+      "A Resource Model is used only for read-only reporting"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 35,
+    "category": "architecture",
+    "question": "Which caching type is responsible for storing compiled layout and page structure information?",
+    "options": [
+      "Layout cache",
+      "Full Page Cache",
+      "Block HTML cache",
+      "Config cache"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 36,
+    "category": "architecture",
+    "question": "What best describes the purpose of 'Areas' like 'global', 'frontend', and 'adminhtml' in configuration files like acl.xml or di.xml folder structure?",
+    "options": [
+      "They scope where a given configuration applies so the same interface can behave differently per context",
+      "They define which currencies are supported",
+      "They are used only for theme fallback",
+      "They control database replication"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 37,
+    "category": "architecture",
+    "question": "In terms of Magento's extensibility architecture, what is the recommended approach to modify checkout behavior on the frontend only, not admin?",
+    "options": [
+      "Place the di.xml configuration inside etc/frontend/di.xml",
+      "Place the di.xml configuration inside etc/adminhtml/di.xml",
+      "Modify the global etc/di.xml and disable it for adminhtml manually",
+      "There is no way to scope configuration by area"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 38,
+    "category": "architecture",
+    "question": "Which of the following is true regarding class 'preferences' and inheritance?",
+    "options": [
+      "A preference class typically must extend the original class or implement the same interface to remain compatible with existing type hints",
+      "A preference class can be any unrelated class with no relationship to the original",
+      "Preferences do not require any class relationship",
+      "Preferences can only be used for Model classes"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 39,
+    "category": "architecture",
+    "question": "What is the main reason Magento avoids using the Singleton anti-pattern directly and instead relies on the Object Manager's shared instance handling?",
+    "options": [
+      "It allows dependencies to be swapped, tested, and mocked more easily via DI configuration",
+      "Singletons are not supported by PHP",
+      "Singletons cannot have constructors",
+      "It reduces the number of composer.json files needed"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 40,
+    "category": "architecture",
+    "question": "Which statement correctly describes the relationship between a Collection and a Repository in Magento's architecture?",
+    "options": [
+      "A Repository often uses a Collection internally to fetch entities matching a SearchCriteria, then wraps results in Data Interfaces",
+      "A Collection always calls a Repository internally",
+      "Repositories and Collections are mutually exclusive and never used together",
+      "Collections are only used in UI Components, never in Repositories"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 41,
+    "category": "architecture",
+    "question": "What is the purpose of the Magento\\Framework\\App\\State::setAreaCode() call in a bootstrapped standalone script?",
+    "options": [
+      "To explicitly set the required application area since it is not automatically detected outside a normal request lifecycle",
+      "To enable full page caching",
+      "To register a new module",
+      "To flush the cache"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 42,
+    "category": "architecture",
+    "question": "Which of the following is an accurate statement about Magento's dependency injection configuration merging?",
+    "options": [
+      "di.xml files from all enabled modules are merged into one combined configuration, with more specific area-level config able to override global config",
+      "Only one module's di.xml can exist per Magento instance",
+      "di.xml files are never merged; only the last-loaded module's configuration applies",
+      "di.xml merging happens only during the developer:code migration process"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 43,
+    "category": "architecture",
+    "question": "What does 'sortOrder' control when declared on multiple plugins targeting the same method?",
+    "options": [
+      "The order in which the plugins are applied relative to each other",
+      "The order of columns in an admin grid",
+      "The alphabetical order of class names",
+      "The priority given to cache invalidation"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 44,
+    "category": "architecture",
+    "question": "Which of the following best explains why Magento discourages using 'around' plugins unless necessary?",
+    "options": [
+      "Around plugins can introduce performance overhead and make debugging harder since they wrap the entire original method call",
+      "Around plugins are deprecated and will be removed",
+      "Around plugins cannot access constructor dependencies",
+      "Around plugins only work with static methods"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 45,
+    "category": "architecture",
+    "question": "What is the primary purpose of the Magento Framework's Interception mechanism (used by plugins)?",
+    "options": [
+      "To generate a runtime Interceptor class that wraps the original class and calls plugin methods before/after/around the intercepted method",
+      "To directly modify the vendor source code files",
+      "To compile SASS into CSS",
+      "To manage database transactions"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 46,
+    "category": "architecture",
+    "question": "In Magento architecture, what is the purpose of a 'ViewModel' (a common convention, though not a core Magento class)?",
+    "options": [
+      "To separate presentation logic from the Block class, keeping Blocks thinner and view logic more testable",
+      "To replace the Object Manager entirely",
+      "To define new database schema",
+      "To manage session state"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 47,
+    "category": "architecture",
+    "question": "Which statement about Magento's theme fallback mechanism is correct?",
+    "options": [
+      "Magento looks for a template/layout file first in the current theme, then falls back to the parent theme, then to the module's own view/frontend or view/base folder",
+      "Themes cannot have a parent theme",
+      "Fallback only applies to CSS files, not templates",
+      "Fallback order is randomized for performance testing"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 48,
+    "category": "architecture",
+    "question": "What is the architectural purpose of 'view/base' inside a module's directory structure?",
+    "options": [
+      "It contains view files shared across all areas (frontend and adminhtml) unless overridden by an area-specific folder",
+      "It only applies to the adminhtml area",
+      "It is used exclusively for email templates",
+      "It has been deprecated and replaced by view/frontend"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 49,
+    "category": "architecture",
+    "question": "Which of the following correctly describes a 'Data Patch' in Magento's setup architecture?",
+    "options": [
+      "A versioned, idempotent PHP class used to insert or modify data during setup:upgrade, replacing older InstallData/UpgradeData scripts",
+      "A patch file applied only to composer.json",
+      "A hotfix applied directly to the vendor directory",
+      "A CSS override for a specific theme"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 50,
+    "category": "architecture",
+    "question": "What does it mean for a Data Patch to be 'idempotent'?",
+    "options": [
+      "Running it multiple times produces the same end result without duplicating data or causing errors",
+      "It can only run once and then deletes itself",
+      "It requires manual confirmation before each run",
+      "It only works in production mode"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 51,
+    "category": "architecture",
+    "question": "Which of the following is true about the relationship between 'setup_version' in module.xml and Data/Schema Patches?",
+    "options": [
+      "Legacy setup_version-triggered scripts are being replaced by Patches, which track their own applied state independently in the patch_list table",
+      "setup_version has no relationship to setup scripts",
+      "Patches require setup_version to be removed entirely",
+      "setup_version only applies to CSS versioning"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 52,
+    "category": "architecture",
+    "question": "What is the core purpose of Magento's Cron Framework?",
+    "options": [
+      "To schedule and execute recurring background tasks such as indexing, email sending, and cleanup jobs",
+      "To render the storefront homepage",
+      "To manage user permissions",
+      "To compile LESS/SASS files"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 53,
+    "category": "architecture",
+    "question": "Which configuration file declares a new cron job and its schedule expression?",
+    "options": [
+      "etc/crontab.xml",
+      "etc/di.xml",
+      "etc/events.xml",
+      "etc/acl.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 54,
+    "category": "architecture",
+    "question": "What does the term 'scope' mean in the context of Magento's configuration system (Stores > Configuration)?",
+    "options": [
+      "The level at which a configuration value applies: default (global), website, or store view",
+      "The PHP variable scope of a class property",
+      "The folder structure of a module",
+      "The visibility modifier of a class method"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 55,
+    "category": "architecture",
+    "question": "Which of the following best describes 'Magento_Store' module's role architecturally?",
+    "options": [
+      "It provides the core Website/Store/Store View hierarchy that most other modules depend on for scoping",
+      "It only manages the admin login page",
+      "It handles payment gateway integrations",
+      "It is only used for multi-language translation files"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 56,
+    "category": "architecture",
+    "question": "What happens if a module declares a preference for an interface that another module has already set a preference for?",
+    "options": [
+      "The last-loaded (or higher-priority, based on module sequence/area specificity) preference wins; conflicts must be resolved deliberately since only one preference can apply per interface",
+      "Both preferences apply simultaneously",
+      "Magento throws a fatal error immediately with no way to resolve it",
+      "Preferences are ignored if declared twice"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 57,
+    "category": "architecture",
+    "question": "Which of the following is an accurate description of a 'Consumer' in the Message Queue Framework?",
+    "options": [
+      "A PHP class that processes messages published to a specific queue, typically run via a long-running or cron-triggered process",
+      "A frontend JavaScript component",
+      "An admin grid column",
+      "A database index"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 58,
+    "category": "architecture",
+    "question": "What is the purpose of Magento\\Framework\\App\\Cache\\TypeListInterface?",
+    "options": [
+      "To manage and report on the different cache types (config, layout, block_html, etc.) so they can be selectively enabled, disabled, or flushed",
+      "To manage currency exchange rates",
+      "To handle customer authentication",
+      "To render the storefront footer"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 59,
+    "category": "architecture",
+    "question": "Which best explains why Magento separates 'Config' cache from 'Full Page Cache'?",
+    "options": [
+      "They cache fundamentally different things (merged XML configuration vs. rendered HTML pages) and are invalidated independently for performance and correctness",
+      "Config cache is deprecated and unused",
+      "They are actually the same cache type with two names",
+      "Full Page Cache always requires Config cache to be disabled"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 60,
+    "category": "architecture",
+    "question": "What is the significance of the 'Magento\\Framework\\Component\\ComponentRegistrar' class?",
+    "options": [
+      "It is the central registry that tracks all discovered modules, themes, language packages, and libraries in the system",
+      "It handles HTTP request routing exclusively",
+      "It renders UI Component grids",
+      "It manages product stock levels"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 61,
+    "category": "architecture",
+    "question": "Which of these correctly describes the purpose of the generated/metadata directory?",
+    "options": [
+      "It stores serialized reflection data used by the Web API framework to describe Service Contract method signatures for REST/SOAP/GraphQL",
+      "It stores compiled CSS files",
+      "It stores customer session data",
+      "It stores database backups"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 62,
+    "category": "architecture",
+    "question": "What is the architectural reasoning behind splitting 'Api' and 'Model' namespaces in a well-structured module?",
+    "options": [
+      "Api holds stable public contracts (interfaces) that other modules can safely depend on; Model holds internal implementation that may change",
+      "Api is only for REST; Model is only for GraphQL",
+      "There is no meaningful distinction, it's purely stylistic",
+      "Api classes cannot have any methods, only constants"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 63,
+    "category": "architecture",
+    "question": "Which of the following is true about Magento's use of the Repository pattern for entities like Product and Customer?",
+    "options": [
+      "Repositories provide a consistent CRUD + search interface (save, getById, getList, deleteById) regardless of the underlying storage mechanism (EAV or flat)",
+      "Repositories are only used for the Customer entity",
+      "Repositories bypass all validation logic",
+      "Repositories are a frontend-only concept"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 64,
+    "category": "architecture",
+    "question": "What is the primary role of a SearchCriteriaBuilder in Magento's architecture?",
+    "options": [
+      "To programmatically construct filter, sort, and pagination criteria to pass into a Repository's getList() method",
+      "To build SQL strings directly for raw execution",
+      "To generate HTML markup for search results pages",
+      "To configure Elasticsearch mappings"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 65,
+    "category": "architecture",
+    "question": "Which statement about 'Extension Attributes' vs 'Custom Attributes' (EAV) is correct?",
+    "options": [
+      "Extension Attributes add data to a Data Interface at runtime via a plugin/interceptor, without being stored in the EAV structure; Custom Attributes are persisted EAV values",
+      "They are identical concepts with different names",
+      "Extension Attributes are always faster because they use EAV internally",
+      "Custom Attributes only work with Customer entities, never Products"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 66,
+    "category": "architecture",
+    "question": "What does 'variable scope' mean when applied to a Store Config value declared in system.xml with showInWebsite='1'?",
+    "options": [
+      "The value can be overridden at the Website level, in addition to the Default (global) level",
+      "The value is a PHP variable visible only within one function",
+      "The value can never be changed once set",
+      "The value only applies to the admin user's session"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 67,
+    "category": "architecture",
+    "question": "Which of the following best explains the purpose of 'Magento\\Framework\\App\\ObjectManager::getInstance()' being discouraged in most application code?",
+    "options": [
+      "Directly calling the Object Manager bypasses proper dependency injection, making code harder to test and violating the DI principle Magento promotes",
+      "It is deprecated and throws a fatal error",
+      "It only works in unit tests",
+      "It requires a special license to use"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 68,
+    "category": "architecture",
+    "question": "What is the significance of a class implementing 'Magento\\Framework\\Api\\ExtensibleDataInterface'?",
+    "options": [
+      "It signals the class supports Extension Attributes, allowing other modules to add data to it without modifying its original interface",
+      "It means the class cannot be serialized to JSON",
+      "It means the class is abstract and cannot be instantiated",
+      "It disables caching for that class entirely"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 69,
+    "category": "architecture",
+    "question": "Which of the following is an accurate statement about how Magento resolves constructor argument type hints during Object Manager instantiation?",
+    "options": [
+      "It inspects the constructor's type hints and recursively resolves each dependency, applying any di.xml preferences/arguments along the way",
+      "It ignores type hints entirely and passes null for every argument",
+      "It requires every dependency to be manually registered in a single central file",
+      "It only works for classes with no constructor"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 70,
+    "category": "architecture",
+    "question": "What is the practical architectural benefit of Magento's layered caching (Full Page Cache, Block Cache, Collection Cache)?",
+    "options": [
+      "Different parts of a page can be cached at different granularities and invalidated independently based on what actually changed",
+      "It eliminates the need for a database entirely",
+      "It only benefits the admin panel, not the storefront",
+      "It requires disabling all dynamic content"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 71,
+    "category": "architecture",
+    "question": "Which statement correctly describes the purpose of 'Magento\\Framework\\Event\\ManagerInterface::dispatch()'?",
+    "options": [
+      "It notifies all registered observers for a given event name, passing along event data for them to act on",
+      "It directly renders a block to HTML",
+      "It commits a database transaction",
+      "It clears the full page cache unconditionally"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 72,
+    "category": "architecture",
+    "question": "What is the key architectural distinction between 'events' and 'plugins' in terms of return value control?",
+    "options": [
+      "Observers cannot alter a method's return value; plugins (especially after/around) can modify what is actually returned to the caller",
+      "Events always run before plugins",
+      "Plugins cannot access the event object",
+      "There is no distinction, they solve the same exact problem"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 73,
+    "category": "architecture",
+    "question": "Which of the following is true about testing Magento code that heavily uses interfaces and DI?",
+    "options": [
+      "Interfaces make it straightforward to create mock implementations for unit testing without needing a full framework bootstrap",
+      "Interfaces make unit testing impossible in Magento",
+      "Only integration tests can be written for Magento modules",
+      "DI prevents the use of PHPUnit"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 74,
+    "category": "architecture",
+    "question": "What does the term 'backward-incompatible change' mean specifically for a Service Contract interface?",
+    "options": [
+      "Adding a required new method, removing a method, or changing a method signature in a way that breaks existing implementers/callers",
+      "Any change to a private method inside a concrete class",
+      "Changing a CSS class name in a theme",
+      "Renaming a database column that is not exposed via the interface"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 75,
+    "category": "architecture",
+    "question": "Which best describes why Adobe Commerce introduced GraphQL as a first-class API layer alongside REST and SOAP?",
+    "options": [
+      "To allow clients (e.g. PWA storefronts) to request exactly the data they need in a single request, reducing over-fetching common with REST",
+      "To completely replace the database layer",
+      "Because REST and SOAP were removed from the platform",
+      "To eliminate the need for Service Contracts"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 76,
+    "category": "architecture",
+    "question": "What is the architectural role of a GraphQL Resolver class?",
+    "options": [
+      "It implements the logic to fetch and return data for a specific field declared in the schema.graphqls file",
+      "It defines the visual layout of a storefront page",
+      "It manages database schema migrations",
+      "It handles admin user authentication only"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 77,
+    "category": "architecture",
+    "question": "Which of the following statements about schema.graphqls merging across modules is accurate?",
+    "options": [
+      "Magento's SchemaConfigInterface implementation automatically discovers and merges every enabled module's schema.graphqls into a single combined schema",
+      "Only one module may define schema.graphqls in an entire Magento instance",
+      "schema.graphqls files must be manually concatenated by the developer before deployment",
+      "GraphQL schemas cannot be extended by third-party modules"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 78,
+    "category": "architecture",
+    "question": "What is the purpose of the '@doc' directive commonly seen in schema.graphqls files?",
+    "options": [
+      "To provide human-readable descriptions that appear in GraphQL introspection and auto-generated documentation tools",
+      "To mark a field as deprecated and non-functional",
+      "To enforce authentication on that field",
+      "To define the field's default cache lifetime"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 79,
+    "category": "architecture",
+    "question": "Which of the following correctly describes the relationship between 'webapi.xml' and Service Contracts?",
+    "options": [
+      "webapi.xml maps a REST/SOAP route and HTTP method to a specific Service Contract interface method, letting the same business logic serve multiple API protocols",
+      "webapi.xml defines the actual PHP implementation logic directly",
+      "webapi.xml is only used for GraphQL, not REST",
+      "webapi.xml replaces the need for di.xml entirely"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 80,
+    "category": "architecture",
+    "question": "What does the 'resource' attribute inside a <route> in webapi.xml control?",
+    "options": [
+      "The ACL permission required to call that endpoint, or 'anonymous'/'self' for special access levels",
+      "The database table the endpoint reads from",
+      "The caching strategy for that specific call",
+      "The programming language used to implement the endpoint"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 81,
+    "category": "architecture",
+    "question": "Which of the following best describes why Magento requires PHP doc blocks (not just type hints) on Service Contract interface methods?",
+    "options": [
+      "The Web API reflection layer parses doc blocks to build the API's request/response schema and Swagger/OpenAPI documentation",
+      "PHP itself requires doc blocks to execute the code",
+      "Doc blocks are required only for private methods",
+      "Doc blocks control which database table a method uses"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 82,
+    "category": "architecture",
+    "question": "What is the architectural purpose of a Data Provider class in the UI Component framework?",
+    "options": [
+      "It bridges backend data (typically a Collection) into the format the Grid or Form UI Component's JavaScript expects",
+      "It renders the final HTML output directly",
+      "It defines database indexes",
+      "It manages user session timeouts"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 83,
+    "category": "architecture",
+    "question": "Which of the following best explains the role of a 'Form Modifier' in UI Component forms?",
+    "options": [
+      "It allows a class to programmatically alter form data or metadata (fields, visibility, options) via dependency injection, without editing the form.xml or Data Provider directly",
+      "It compiles the form's JavaScript bundle",
+      "It is required for every form regardless of customization needs",
+      "It only works on Grids, not Forms"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 84,
+    "category": "architecture",
+    "question": "What does the 'requestFieldName' argument on a UI Component Data Provider typically represent?",
+    "options": [
+      "The URL parameter name used to identify which specific record (e.g. entity id) should be loaded for editing",
+      "The name of the database column storing the primary key",
+      "The CSS class applied to the form container",
+      "The name of the ACL resource protecting the form"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 85,
+    "category": "architecture",
+    "question": "Which statement correctly explains why UI Component Grids and Forms often share the same Data Provider class?",
+    "options": [
+      "The same underlying Collection/entity can serve both a listing view and a single-record edit view, differentiated by whether a specific ID is requested",
+      "Grids and Forms must always use entirely separate, unrelated classes",
+      "Sharing a Data Provider is a Magento anti-pattern that should be avoided",
+      "Forms cannot use Data Providers at all"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 86,
+    "category": "architecture",
+    "question": "What is the primary architectural reason Magento separates 'Model + ResourceModel + Collection' rather than putting all logic in one class?",
+    "options": [
+      "It separates business logic (Model), persistence/SQL logic (ResourceModel), and bulk querying (Collection) into distinct, single-responsibility layers",
+      "PHP requires exactly three classes per entity",
+      "It is purely a historical artifact with no current benefit",
+      "ResourceModel and Collection are functionally identical"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 87,
+    "category": "architecture",
+    "question": "Which of the following is an accurate statement about Magento's ACL (Access Control List) architecture?",
+    "options": [
+      "ACL resources form a hierarchical tree; granting a parent resource does not automatically grant access to children unless explicitly configured, and menu/controller access is checked against specific resource IDs",
+      "ACL only applies to the storefront, not the Admin panel",
+      "All admin users automatically have access to every resource",
+      "ACL resources cannot be nested"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 88,
+    "category": "architecture",
+    "question": "What is the purpose of declaring a 'resource' attribute on an Admin controller class (e.g. const ADMIN_RESOURCE)?",
+    "options": [
+      "To enforce, at the controller level, that only admin users with the matching ACL permission can execute that action, even if they access the URL directly",
+      "To define the controller's database table",
+      "To set the controller's HTTP response code",
+      "To register the controller's routes.xml automatically"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 89,
+    "category": "architecture",
+    "question": "Which best describes why menu.xml visibility and controller ACL checks are both necessary, rather than relying on just one?",
+    "options": [
+      "Menu visibility only hides the link in the UI; the controller-level check is the actual security enforcement preventing direct URL access",
+      "Menu.xml alone is sufficient and controller checks are redundant",
+      "Controller checks alone are sufficient and menu.xml has no security purpose",
+      "Both serve purely cosmetic purposes with no security implication"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 90,
+    "category": "architecture",
+    "question": "What is the architectural significance of Magento's 'area' folder structure (etc/frontend, etc/adminhtml, etc/webapi_rest) existing alongside a global etc/ folder?",
+    "options": [
+      "It allows the same interface or event to have different behavior depending on execution context, without conditional logic scattered through the codebase",
+      "Only one of these folders can exist per module",
+      "The global etc/ folder is ignored if any area folder exists",
+      "Area folders are purely for organizational purposes with no functional effect"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 91,
+    "category": "architecture",
+    "question": "Which of the following correctly describes the purpose of the 'Magento\\Framework\\Api\\SearchResultsInterface'?",
+    "options": [
+      "It wraps a list of entities together with pagination metadata (total count) and the search criteria that was applied, standardizing list responses across the platform",
+      "It is used exclusively for storing product images",
+      "It replaces the need for a Collection class entirely",
+      "It only applies to GraphQL responses"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 92,
+    "category": "architecture",
+    "question": "What does it mean architecturally that Magento's checkout process is built on Knockout.js UI Components rather than plain server-rendered HTML?",
+    "options": [
+      "It allows dynamic, reactive updates to the checkout page (e.g. switching payment methods) without full page reloads, using client-side data binding",
+      "It means checkout cannot use PHP at all",
+      "It removes the need for any backend validation",
+      "It requires a separate database for checkout data"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 93,
+    "category": "architecture",
+    "question": "Which of the following best explains the purpose of 'renderer-list.js' in Magento's checkout payment step architecture?",
+    "options": [
+      "It maintains the observable list of registered payment method renderers that the payment step iterates over to decide what to actually render",
+      "It defines the CSS styles for the checkout page",
+      "It stores the customer's saved addresses",
+      "It is the file responsible for calculating tax"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 94,
+    "category": "architecture",
+    "question": "What is the architectural reason a payment method's JS component often needs both a 'registration' file and a 'renderer' file?",
+    "options": [
+      "The registration file pushes the method into the shared renderer-list so checkout's rendering loop is aware of it; the renderer file implements the actual UI/behavior",
+      "Both files do the exact same thing and are redundant",
+      "Registration files are optional and only used in Adobe Commerce, not Magento Open Source",
+      "The renderer file only exists for shipping methods, not payment methods"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 95,
+    "category": "architecture",
+    "question": "Which of the following is true regarding Magento's approach to internationalization (i18n)?",
+    "options": [
+      "Translation strings wrapped in __() are resolved via CSV dictionary files per locale, allowing the same codebase to serve multiple languages",
+      "Magento requires a separate codebase per language",
+      "Translations are hardcoded directly into PHP class names",
+      "i18n only applies to the Admin panel, not the storefront"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 96,
+    "category": "architecture",
+    "question": "What is the purpose of 'Magento\\Framework\\Translate\\Inline' functionality in developer mode?",
+    "options": [
+      "It allows developers to see and edit translation strings directly on the rendered page for quick iteration",
+      "It automatically translates content using a third-party AI service",
+      "It disables all translations for performance testing",
+      "It is used only for currency conversion, not text translation"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 97,
+    "category": "architecture",
+    "question": "Which statement correctly describes 'Store View' scope in relation to a multi-language, multi-currency Magento setup?",
+    "options": [
+      "A single Website can have multiple Store Views, each potentially using a different language/locale while sharing the same catalog and customer base",
+      "Store Views require entirely separate databases",
+      "Only one Store View can exist per Magento installation",
+      "Store Views control payment gateway credentials exclusively"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 98,
+    "category": "architecture",
+    "question": "What is the significance of the 'Magento\\Framework\\App\\ProductMetadataInterface' in the platform's architecture?",
+    "options": [
+      "It exposes metadata about the running application itself, such as version and edition, in a consistent, injectable way",
+      "It manages individual product entity metadata like SKU and price",
+      "It is only used internally by the installer and has no runtime use",
+      "It defines the product page's SEO meta tags"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 99,
+    "category": "architecture",
+    "question": "Which of the following best describes why plugins cannot intercept 'final' methods or private/static methods reliably?",
+    "options": [
+      "Magento's interception mechanism relies on generating a subclass (Interceptor) that overrides public/protected methods, which isn't possible for final or static methods in the same way",
+      "Plugins technically can intercept any method type with no restriction",
+      "Final methods are automatically converted to non-final at compile time",
+      "Static methods are handled by observers instead, with identical syntax"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 100,
+    "category": "architecture",
+    "question": "What is the core architectural purpose of Magento's 'Registry' pattern historically, and why is it now discouraged?",
+    "options": [
+      "It provided global variable-like storage accessible anywhere, but this created hidden dependencies and made code harder to test, so DI is now preferred",
+      "It was used exclusively for currency exchange rates",
+      "It has been completely removed with no successor concept",
+      "It only ever applied to the checkout module"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 101,
+    "category": "customizations",
+    "question": "Which file is required inside a module's root directory to register it with Magento's ComponentRegistrar?",
+    "options": [
+      "registration.php",
+      "module.xml",
+      "composer.json",
+      "di.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 102,
+    "category": "customizations",
+    "question": "Which file declares a module's name and its dependency sequence on other modules?",
+    "options": [
+      "etc/module.xml",
+      "registration.php",
+      "etc/di.xml",
+      "etc/config.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 103,
+    "category": "customizations",
+    "question": "A developer wants to add a brand-new CLI command reachable via bin/magento. Which interface should the command class implement?",
+    "options": [
+      "Symfony\\Component\\Console\\Command\\Command (registered via the CommandListInterface argument in di.xml)",
+      "Magento\\Framework\\App\\Action\\HttpGetActionInterface",
+      "Magento\\Framework\\Event\\ObserverInterface",
+      "Magento\\Framework\\Api\\SearchCriteriaInterface"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 104,
+    "category": "customizations",
+    "question": "Which di.xml element is used to register a new console command?",
+    "options": [
+      "<type name=\"Magento\\Framework\\Console\\CommandListInterface\"> with an argument array of commands",
+      "<preference for=\"...\" type=\"...\"/>",
+      "<virtualType name=\"...\">",
+      "<plugin name=\"...\">"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 105,
+    "category": "customizations",
+    "question": "A plugin needs to log a message every time an order is placed, without altering the order object. Which plugin type is most appropriate?",
+    "options": [
+      "An 'after' plugin on the Order model's place() method",
+      "A 'before' plugin that overwrites the order entirely",
+      "An 'around' plugin that never calls $proceed()",
+      "A preference that removes the place() method"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 106,
+    "category": "customizations",
+    "question": "What must a 'before' plugin method return?",
+    "options": [
+      "The (possibly modified) arguments as an array, in the same order as the original method's parameters",
+      "The original object only",
+      "Nothing; before plugins cannot return anything",
+      "A boolean indicating success"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 107,
+    "category": "customizations",
+    "question": "Which naming convention must an 'after' plugin method for a method named getEdition() follow?",
+    "options": [
+      "afterGetEdition",
+      "pluginGetEdition",
+      "getEditionAfter",
+      "onGetEdition"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 108,
+    "category": "customizations",
+    "question": "What is required for an 'around' plugin to allow the original method to actually execute?",
+    "options": [
+      "It must call the injected $proceed callable (typically passing along the original arguments)",
+      "It must return null explicitly",
+      "It must throw an exception",
+      "Around plugins execute the original method automatically with no code needed"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 109,
+    "category": "customizations",
+    "question": "Which file scopes a plugin so it only applies when Magento is running in the Admin panel?",
+    "options": [
+      "etc/adminhtml/di.xml",
+      "etc/frontend/di.xml",
+      "etc/webapi_rest/di.xml",
+      "etc/crontab.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 110,
+    "category": "customizations",
+    "question": "A developer wants to observe every time a customer's cart is saved. Which event is most appropriate to hook into via an Observer?",
+    "options": [
+      "checkout_cart_save_after",
+      "sales_order_place_after",
+      "customer_login",
+      "controller_action_predispatch"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 111,
+    "category": "customizations",
+    "question": "Which file declares an event-to-observer mapping?",
+    "options": [
+      "etc/events.xml",
+      "etc/di.xml",
+      "etc/acl.xml",
+      "etc/webapi.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 112,
+    "category": "customizations",
+    "question": "What interface must an Observer class implement?",
+    "options": [
+      "Magento\\Framework\\Event\\ObserverInterface",
+      "Magento\\Framework\\Event\\ManagerInterface",
+      "Magento\\Framework\\Api\\AbstractSimpleObject",
+      "Magento\\Framework\\App\\Action\\ActionInterface"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 113,
+    "category": "customizations",
+    "question": "Which method does an Observer class require, and what does it receive as an argument?",
+    "options": [
+      "execute(), receiving a Magento\\Framework\\Event\\Observer object",
+      "run(), receiving the raw event name as a string",
+      "handle(), receiving nothing",
+      "dispatch(), receiving the Object Manager"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 114,
+    "category": "customizations",
+    "question": "A developer wants to add a new database table for a custom module. Which file declares the table structure using declarative schema?",
+    "options": [
+      "etc/db_schema.xml",
+      "etc/db_schema_whitelist.json alone",
+      "Setup/InstallSchema.php",
+      "etc/module.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 115,
+    "category": "customizations",
+    "question": "Which additional file is required alongside db_schema.xml for setup:upgrade to actually apply the declared table/columns?",
+    "options": [
+      "etc/db_schema_whitelist.json",
+      "etc/acl.xml",
+      "etc/events.xml",
+      "etc/webapi.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 116,
+    "category": "customizations",
+    "question": "What does the 'identity' attribute set to true on a column in db_schema.xml typically indicate?",
+    "options": [
+      "The column is an auto-incrementing primary key",
+      "The column stores encrypted data",
+      "The column must be unique across all rows",
+      "The column cannot be null"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 117,
+    "category": "customizations",
+    "question": "Which xsi:type would you use in db_schema.xml for a column meant to store long-form free text, such as a description?",
+    "options": [
+      "text",
+      "varchar",
+      "int",
+      "boolean"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 118,
+    "category": "customizations",
+    "question": "What is the correct base class for a custom Model representing a single row in a custom, non-EAV database table?",
+    "options": [
+      "Magento\\Framework\\Model\\AbstractModel",
+      "Magento\\Framework\\Model\\ResourceModel\\Db\\AbstractDb",
+      "Magento\\Framework\\Model\\ResourceModel\\Db\\Collection\\AbstractCollection",
+      "Magento\\Framework\\Api\\AbstractExtensibleObject"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 119,
+    "category": "customizations",
+    "question": "Which base class should a Resource Model extend to handle actual CRUD operations against a custom table?",
+    "options": [
+      "Magento\\Framework\\Model\\ResourceModel\\Db\\AbstractDb",
+      "Magento\\Framework\\Model\\AbstractModel",
+      "Magento\\Framework\\View\\Element\\Template",
+      "Magento\\Framework\\App\\Action\\Action"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 120,
+    "category": "customizations",
+    "question": "What two arguments does a Resource Model's _construct() method typically pass to _init()?",
+    "options": [
+      "The table name and the primary key column name",
+      "The Model class name and the Collection class name",
+      "The module name and the area code",
+      "The ACL resource and the menu id"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 121,
+    "category": "customizations",
+    "question": "Which base class does a Collection use to work with a custom table's Model and Resource Model together?",
+    "options": [
+      "Magento\\Framework\\Model\\ResourceModel\\Db\\Collection\\AbstractCollection",
+      "Magento\\Framework\\Model\\AbstractModel",
+      "Magento\\Framework\\Model\\ResourceModel\\Db\\AbstractDb",
+      "Magento\\Framework\\Api\\SearchCriteriaInterface"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 122,
+    "category": "customizations",
+    "question": "What two class references does a Collection's _construct() method pass into _init()?",
+    "options": [
+      "The Model class and the Resource Model class",
+      "The table name and the primary key",
+      "The ACL resource id and menu title",
+      "The controller class and the layout handle"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 123,
+    "category": "customizations",
+    "question": "A developer needs a *Factory class for a custom Model to create new instances via dependency injection. What must they do to obtain it?",
+    "options": [
+      "Simply type-hint the auto-generated <ClassName>Factory in a constructor; Magento generates it automatically based on naming convention",
+      "Manually write the Factory class in app/code",
+      "Register it explicitly in composer.json",
+      "Extend Magento\\Framework\\App\\Action\\Action"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 124,
+    "category": "customizations",
+    "question": "Which command forces generation of missing Factory/Proxy/Interceptor classes if they were not auto-generated in developer mode?",
+    "options": [
+      "bin/magento setup:di:compile",
+      "bin/magento cache:flush",
+      "bin/magento indexer:reindex",
+      "bin/magento module:enable"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 125,
+    "category": "customizations",
+    "question": "A developer wants to expose Save, GetById, GetList, and DeleteById operations for a custom entity through a stable contract. What should they create?",
+    "options": [
+      "A Repository class implementing a custom RepositoryInterface (Service Contract)",
+      "A single static utility class with public methods",
+      "A Block class with those four methods",
+      "An Observer with four separate event bindings"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 126,
+    "category": "customizations",
+    "question": "Which interface's getList() implementation typically accepts a SearchCriteriaInterface and returns a SearchResultsInterface?",
+    "options": [
+      "A Repository implementing a custom *RepositoryInterface",
+      "An Observer implementing ObserverInterface",
+      "A Block extending Template",
+      "A Console Command extending Command"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 127,
+    "category": "customizations",
+    "question": "What is the purpose of wiring `<preference for=\"Vendor\\Module\\Api\\XRepositoryInterface\" type=\"Vendor\\Module\\Model\\XRepository\"/>` in di.xml?",
+    "options": [
+      "It tells Magento's DI container which concrete class to instantiate whenever the interface is requested",
+      "It registers a new REST endpoint automatically",
+      "It creates a new database table",
+      "It defines a new admin ACL resource"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 128,
+    "category": "customizations",
+    "question": "A developer wants to expose a custom Repository's getList() method as a public REST endpoint. Which file is required?",
+    "options": [
+      "etc/webapi.xml",
+      "etc/events.xml",
+      "etc/crontab.xml",
+      "etc/acl.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 129,
+    "category": "customizations",
+    "question": "In webapi.xml, what does `<resource ref=\"anonymous\"/>` mean for a given route?",
+    "options": [
+      "The endpoint can be called without any authentication token",
+      "The endpoint is disabled entirely",
+      "The endpoint requires an admin token specifically",
+      "The endpoint can only be called from localhost"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 130,
+    "category": "customizations",
+    "question": "Why must Data Interface methods (like getName(): string) include PHP doc blocks with @return annotations, even with native type hints?",
+    "options": [
+      "Magento's Web API reflection layer parses doc blocks to build the API schema; omitting them causes a runtime exception",
+      "PHP itself requires them to execute the method",
+      "They are purely cosmetic and never checked by any tooling",
+      "They are only required for private methods"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 131,
+    "category": "customizations",
+    "question": "A developer wants to expose new data via GraphQL. Which file declares the new query/type in the schema?",
+    "options": [
+      "etc/schema.graphqls",
+      "etc/webapi.xml",
+      "etc/graphql.xml",
+      "etc/events.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 132,
+    "category": "customizations",
+    "question": "Which interface must a class implement to act as a GraphQL field Resolver?",
+    "options": [
+      "Magento\\Framework\\GraphQl\\Query\\ResolverInterface",
+      "Magento\\Framework\\Event\\ObserverInterface",
+      "Magento\\Framework\\Api\\SearchCriteriaInterface",
+      "Magento\\Framework\\Model\\AbstractModel"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 133,
+    "category": "customizations",
+    "question": "In a schema.graphqls file, what does the custom directive `@resolver(class: \"...\")` do?",
+    "options": [
+      "It links a schema field to the PHP class responsible for fetching its data",
+      "It marks the field as cacheable indefinitely",
+      "It restricts the field to admin-only access",
+      "It converts the field into a mutation automatically"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 134,
+    "category": "customizations",
+    "question": "What does the '@doc' directive in schema.graphqls provide?",
+    "options": [
+      "A human-readable description surfaced in GraphQL introspection tools",
+      "Enforcement of a required argument",
+      "A default sort order for list results",
+      "Rate limiting configuration"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 135,
+    "category": "customizations",
+    "question": "A developer wants a new item to appear in the Admin left navigation. Which file declares it?",
+    "options": [
+      "etc/adminhtml/menu.xml",
+      "etc/adminhtml/routes.xml",
+      "etc/acl.xml",
+      "etc/di.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 136,
+    "category": "customizations",
+    "question": "Which attribute on a <add> node in menu.xml determines which existing top-level menu group a new item nests under?",
+    "options": [
+      "parent",
+      "resource",
+      "action",
+      "module"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 137,
+    "category": "customizations",
+    "question": "What does the 'resource' attribute on a menu.xml entry control?",
+    "options": [
+      "Which ACL permission a user must have for the menu item to be visible",
+      "The database table the menu links to",
+      "The CSS icon class shown next to the item",
+      "The sort order among top level menus only"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 138,
+    "category": "customizations",
+    "question": "Which file must exist to make an admin controller's route (e.g. mymodule/controller/action) resolvable at all?",
+    "options": [
+      "etc/adminhtml/routes.xml declaring the frontName under <router id=\"admin\">",
+      "etc/adminhtml/menu.xml only",
+      "etc/acl.xml only",
+      "etc/di.xml only"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 139,
+    "category": "customizations",
+    "question": "What must an Admin controller class extend or implement to enforce admin login and ACL checks automatically?",
+    "options": [
+      "Magento\\Backend\\App\\Action (with a const ADMIN_RESOURCE defined)",
+      "Magento\\Framework\\App\\Action\\Action with no additional setup",
+      "Any plain PHP class with an execute() method",
+      "Magento\\Framework\\View\\Element\\Template"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 140,
+    "category": "customizations",
+    "question": "Which class is typically injected to render a full themed admin page (with header, footer, menu) from a controller's execute() method?",
+    "options": [
+      "Magento\\Framework\\View\\Result\\PageFactory",
+      "Magento\\Framework\\Controller\\Result\\RawFactory",
+      "Magento\\Framework\\Controller\\Result\\JsonFactory",
+      "Magento\\Framework\\Controller\\Result\\RedirectFactory"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 141,
+    "category": "customizations",
+    "question": "A developer wants a storefront controller to return raw plain text with no theme wrapper. Which factory should be used?",
+    "options": [
+      "Magento\\Framework\\Controller\\Result\\RawFactory",
+      "Magento\\Framework\\View\\Result\\PageFactory",
+      "Magento\\Framework\\Controller\\Result\\JsonFactory",
+      "Magento\\Framework\\Controller\\Result\\ForwardFactory"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 142,
+    "category": "customizations",
+    "question": "Which interface should a storefront controller implement to explicitly declare it only responds to GET requests?",
+    "options": [
+      "Magento\\Framework\\App\\Action\\HttpGetActionInterface",
+      "Magento\\Framework\\App\\Action\\HttpPostActionInterface",
+      "Magento\\Framework\\App\\ActionInterface only, with no HTTP method restriction",
+      "Magento\\Framework\\Controller\\ResultInterface"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 143,
+    "category": "customizations",
+    "question": "What must a storefront routes.xml file declare for a new URL front name to be recognized?",
+    "options": [
+      "A <route> with a unique id and frontName, nested under <router id=\"standard\">",
+      "A <route> under <router id=\"admin\"> only",
+      "An events.xml entry",
+      "An acl.xml entry"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 144,
+    "category": "customizations",
+    "question": "How does Magento resolve a Controller class from a URL like /frontname/foldername/actionname?",
+    "options": [
+      "It maps frontName to a module via routes.xml, then resolves Controller/Foldername/Actionname.php by naming convention",
+      "It requires an explicit manual mapping entry per action in a central routing table",
+      "It uses only the HTTP method with no path-based resolution",
+      "URLs must always be exactly three segments with no naming convention involved"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 145,
+    "category": "customizations",
+    "question": "Which layout XML naming convention must be followed for a layout file to apply automatically to a specific controller action?",
+    "options": [
+      "<frontName>_<controllerFolder>_<actionClass>.xml, exactly matching the resolved route",
+      "Any arbitrary filename works as long as it's in the layout folder",
+      "The filename must match the module name exactly",
+      "Layout files are matched only by file modification date"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 146,
+    "category": "customizations",
+    "question": "Which layout XML tag is used to place a Block into an existing named container, such as 'content'?",
+    "options": [
+      "<referenceContainer name=\"content\">...<block .../></referenceContainer>",
+      "<referenceBlock name=\"content\">",
+      "<container name=\"content\"/> alone with no children",
+      "<update handle=\"content\"/>"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 147,
+    "category": "customizations",
+    "question": "What base class should a frontend Block extend if it simply needs to expose PHP data/logic to a .phtml template?",
+    "options": [
+      "Magento\\Framework\\View\\Element\\Template",
+      "Magento\\Backend\\Block\\Template",
+      "Magento\\Framework\\Model\\AbstractModel",
+      "Magento\\Framework\\App\\Action\\Action"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 148,
+    "category": "customizations",
+    "question": "Which base class should be used instead for a Block rendered specifically in the Admin panel?",
+    "options": [
+      "Magento\\Backend\\Block\\Template",
+      "Magento\\Framework\\View\\Element\\Template",
+      "Magento\\Framework\\Model\\ResourceModel\\Db\\AbstractDb",
+      "Magento\\Framework\\App\\Action\\Action"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 149,
+    "category": "customizations",
+    "question": "Why can't a single .phtml template file be shared directly between the frontend and adminhtml areas without duplication?",
+    "options": [
+      "Magento resolves templates per area (view/frontend vs view/adminhtml), so the same Block class needs a template in each area's own folder",
+      "PHP prevents .phtml files from being included from more than one folder",
+      "Templates are compiled into machine code per area at install time",
+      "There is no such restriction; this scenario is impossible"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 150,
+    "category": "customizations",
+    "question": "What is the purpose of `$block->escapeHtml()` inside a .phtml template?",
+    "options": [
+      "To safely output dynamic content while preventing XSS by encoding special HTML characters",
+      "To translate the string into the active locale",
+      "To minify the resulting HTML",
+      "To convert the string into JSON"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 151,
+    "category": "customizations",
+    "question": "A developer wants to add a dropdown product attribute with custom validation logic. Which class type enforces that validation on save?",
+    "options": [
+      "A Backend Model extending Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\AbstractBackend, implementing validate()",
+      "A Source Model implementing getAllOptions() only",
+      "A Frontend Model implementing getValue() only",
+      "An Observer on the customer_login event"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 152,
+    "category": "customizations",
+    "question": "Which class type is responsible for defining the actual dropdown option list for an EAV attribute?",
+    "options": [
+      "A Source Model extending Magento\\Eav\\Model\\Entity\\Attribute\\Source\\AbstractSource",
+      "A Backend Model",
+      "A Frontend Model",
+      "A Data Patch"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 153,
+    "category": "customizations",
+    "question": "Which class type controls how an EAV attribute's value is rendered/formatted for display, e.g. on the storefront product page?",
+    "options": [
+      "A Frontend Model extending Magento\\Eav\\Model\\Entity\\Attribute\\Frontend\\AbstractFrontend",
+      "A Source Model",
+      "A Backend Model",
+      "A Resource Model"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 154,
+    "category": "customizations",
+    "question": "Which legacy mechanism, still supported, is commonly used to programmatically add a new EAV attribute during setup?",
+    "options": [
+      "A Data Patch (or InstallData.php) using EavSetupFactory's addAttribute() method",
+      "A plugin on Product::save()",
+      "An entry in webapi.xml",
+      "A new column added directly via db_schema.xml on catalog_product_entity"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 155,
+    "category": "customizations",
+    "question": "Why is it incorrect to add a new EAV attribute simply by adding a new column via db_schema.xml on catalog_product_entity?",
+    "options": [
+      "EAV entities store attribute values in separate per-type tables (varchar, int, text, etc.), not as columns on the main entity table; attributes must be registered via EAV setup, not raw schema columns",
+      "db_schema.xml cannot create any new columns at all",
+      "Product entities do not support any new attributes after installation",
+      "EAV setup is deprecated and no longer functional"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 156,
+    "category": "customizations",
+    "question": "A developer needs to auto-assign a customer to a VIP group after they reach a spending threshold. Which combination is most appropriate?",
+    "options": [
+      "A plugin (or observer) on order placement that checks lifetime order totals and updates the customer via CustomerRepositoryInterface",
+      "A cron job that deletes the customer's account",
+      "A GraphQL mutation with no PHP logic",
+      "A CSS class toggle on the storefront"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 157,
+    "category": "customizations",
+    "question": "Which interface should be used to fetch and save a Customer entity in modern, Service-Contract-based code, rather than instantiating the Model directly?",
+    "options": [
+      "Magento\\Customer\\Api\\CustomerRepositoryInterface",
+      "Magento\\Customer\\Model\\Customer directly via new",
+      "Magento\\Framework\\Event\\ManagerInterface",
+      "Magento\\Framework\\Api\\SearchCriteriaInterface alone"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 158,
+    "category": "customizations",
+    "question": "What is the recommended way to add a brand new offline payment method to Magento?",
+    "options": [
+      "Extend Magento\\Payment\\Model\\Method\\AbstractMethod, set _code and _isOffline, and register it via etc/config.xml plus a JS renderer registered into the checkout's renderer-list",
+      "Directly modify Magento_Checkout core files",
+      "Create only a new database table with no PHP class",
+      "Use only a GraphQL mutation with no Model class"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 159,
+    "category": "customizations",
+    "question": "Which config.xml node under <payment> is required at minimum to register a new offline payment method?",
+    "options": [
+      "<active>, <model>, and <title> nodes under a unique payment code",
+      "Only a <title> node",
+      "Only an <allowspecific> node",
+      "No config.xml entry is needed; JS registration alone is sufficient"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 160,
+    "category": "customizations",
+    "question": "Why would declaring <payment_action>authorize</payment_action> break a simple offline payment method?",
+    "options": [
+      "A bare offline AbstractMethod subclass has no authorize() implementation to actually perform, since there is no gateway transaction to create",
+      "The tag is purely cosmetic and never causes errors",
+      "It only affects the Admin UI label, not functionality",
+      "It is required for every payment method regardless of type"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 161,
+    "category": "customizations",
+    "question": "Which JS file's job is specifically to push a new payment method's type/component pair into Magento_Checkout's shared renderer list?",
+    "options": [
+      "A small registration component that imports Magento_Checkout/js/model/payment/renderer-list and calls push()",
+      "The .phtml template file",
+      "The etc/webapi.xml file",
+      "The Data Patch class"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 162,
+    "category": "customizations",
+    "question": "What does leaving `isBillingAddressRequired` set to true in checkout's jsLayout mean for a custom payment method renderer that implements no billing form?",
+    "options": [
+      "Checkout will wait on billing-address validation that never completes, which can block the Place Order button from becoming enabled",
+      "It has no effect on Place Order button behavior",
+      "It automatically generates a billing form for free",
+      "It disables the payment method entirely"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 163,
+    "category": "customizations",
+    "question": "Which knockout binding is essential inside a custom payment method template to actually submit the order?",
+    "options": [
+      "click: placeOrder, combined with enable/css bindings tied to isPlaceOrderActionAllowed()",
+      "A plain HTML form submit with no JS bindings",
+      "A GraphQL mutation triggered on page load",
+      "An event listener on the browser's beforeunload event"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 164,
+    "category": "customizations",
+    "question": "A developer wants to add a permission that gates visibility of a custom admin panel. Which two files must work together?",
+    "options": [
+      "etc/acl.xml (defining the resource) and etc/adminhtml/menu.xml (referencing that resource id)",
+      "etc/webapi.xml and etc/events.xml",
+      "etc/db_schema.xml and etc/db_schema_whitelist.json",
+      "composer.json and registration.php"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 165,
+    "category": "customizations",
+    "question": "What is the correct nesting for a brand-new ACL resource meant to sit logically under the existing Content section in Admin?",
+    "options": [
+      "Nest it as a child <resource> under Magento_Backend::content within Magento_Backend::admin",
+      "Nest it under Magento_Cms::content, since Content is managed by Magento_Cms",
+      "It cannot be nested; all ACL resources are flat",
+      "Nest it under Magento_Sales::sales_operation regardless of purpose"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 166,
+    "category": "customizations",
+    "question": "Which Admin API is used at runtime to check whether the currently logged-in admin user has been granted a specific ACL resource?",
+    "options": [
+      "Magento\\Framework\\Authorization::isAllowed()",
+      "Magento\\Framework\\Event\\ManagerInterface::dispatch()",
+      "Magento\\Framework\\App\\Cache\\TypeListInterface::invalidate()",
+      "Magento\\Customer\\Api\\CustomerRepositoryInterface::getById()"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 167,
+    "category": "customizations",
+    "question": "Which UI Component XML file declares a Grid's columns and its Data Provider?",
+    "options": [
+      "view/adminhtml/ui_component/<listing_name>.xml with a <listing> root node",
+      "view/adminhtml/layout/<listing_name>.xml",
+      "etc/adminhtml/menu.xml",
+      "etc/di.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 168,
+    "category": "customizations",
+    "question": "In a listing.xml file, what must the js_config 'provider' string exactly match?",
+    "options": [
+      "The pattern <listing_component_name>.<dataSource_name>, matching the dataSource's own 'name' attribute in the same file",
+      "The module's Composer package name",
+      "The ACL resource id",
+      "The controller class's fully qualified name"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 169,
+    "category": "customizations",
+    "question": "What is required for a controller to actually render a declared UI Component (e.g. a Grid) onto the page?",
+    "options": [
+      "A layout XML file for that controller's action, containing a <uiComponent name=\"...\"/> tag inside a referenced container",
+      "Nothing extra; PageFactory automatically finds and renders all UI Components",
+      "A GraphQL query bound to the page",
+      "An entry in db_schema_whitelist.json"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 170,
+    "category": "customizations",
+    "question": "Which class should a custom Data Provider extend to bridge a Collection into the UI Component Grid/Form framework?",
+    "options": [
+      "Magento\\Ui\\DataProvider\\AbstractDataProvider",
+      "Magento\\Framework\\Model\\AbstractModel",
+      "Magento\\Framework\\View\\Element\\Template",
+      "Magento\\Backend\\App\\Action"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 171,
+    "category": "customizations",
+    "question": "What does a Form Modifier class implementing ModifierInterface's modifyData() and modifyMeta() methods allow a developer to do?",
+    "options": [
+      "Alter form field data or metadata (visibility, options, labels) dynamically via dependency injection, without editing the form.xml directly",
+      "Delete records directly from the database",
+      "Register new REST routes",
+      "Bypass ACL checks for the current form"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 172,
+    "category": "customizations",
+    "question": "How is a Form Modifier typically wired into a Data Provider?",
+    "options": [
+      "Via a di.xml virtualType configuring a Magento\\Ui\\DataProvider\\Modifier\\Pool with the modifier class and a sortOrder",
+      "By hardcoding the modifier's class name directly inside the .phtml template",
+      "By adding it to composer.json's 'extra' section",
+      "Form Modifiers cannot be injected; they must be hardcoded into core"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 173,
+    "category": "customizations",
+    "question": "A developer wants a custom command to run on a schedule rather than manually via bin/magento. What should they add?",
+    "options": [
+      "A <job> entry in etc/crontab.xml pointing to a class implementing the scheduled logic",
+      "A new entry in etc/webapi.xml",
+      "A GraphQL mutation",
+      "A new column in db_schema.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 174,
+    "category": "customizations",
+    "question": "Which command can be used to manually trigger cron job execution for testing, without waiting for the schedule?",
+    "options": [
+      "bin/magento cron:run",
+      "bin/magento cache:flush",
+      "bin/magento indexer:reindex",
+      "bin/magento setup:upgrade"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 175,
+    "category": "customizations",
+    "question": "What must be true for `bin/magento cron:run` to actually execute a specific scheduled job right now?",
+    "options": [
+      "The job's scheduled_at time in the cron_schedule table must already be in the past (due)",
+      "Nothing; cron:run executes every job regardless of schedule",
+      "The job must be manually deleted from the database first",
+      "Cron jobs can only run through a dedicated separate container, never via this command"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 176,
+    "category": "customizations",
+    "question": "A developer wants to log a message using Magento's standard logging mechanism rather than echo or var_dump. Which interface should be injected?",
+    "options": [
+      "Psr\\Log\\LoggerInterface",
+      "Magento\\Framework\\App\\State",
+      "Magento\\Framework\\Event\\Observer",
+      "Magento\\Framework\\Api\\SearchCriteriaInterface"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 177,
+    "category": "customizations",
+    "question": "Why does Magento rely on Psr\\Log\\LoggerInterface (PSR-3) rather than a Magento-specific logging interface?",
+    "options": [
+      "It's a standardized interface, so logging code isn't locked to one specific implementation and can be swapped via DI",
+      "PSR-3 is required by PHP itself to run any code",
+      "Psr\\Log\\LoggerInterface is faster than any alternative",
+      "It removes the need for var_dump entirely in all environments"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 178,
+    "category": "customizations",
+    "question": "Which di.xml construct lets a developer override just one specific constructor argument for one specific class, without a global preference?",
+    "options": [
+      "A <type name=\"...\"><arguments><argument name=\"...\" xsi:type=\"...\">...</argument></arguments></type> block",
+      "A global <preference> for the entire interface",
+      "An events.xml <observer> node",
+      "A webapi.xml <route> node"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 179,
+    "category": "customizations",
+    "question": "What does `xsi:type=\"object\"` mean when used inside a di.xml <argument> node?",
+    "options": [
+      "The argument's value is another class name that should be instantiated/injected as an object, rather than a literal scalar value",
+      "The argument must always be null",
+      "The argument is passed as raw unescaped PHP code",
+      "The argument only works for array values"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 180,
+    "category": "customizations",
+    "question": "A developer wants every instance of a class to receive a custom Logger instead of the default shared one, but ONLY for that one class. What's the correct approach?",
+    "options": [
+      "Add a targeted <argument name=\"logger\" xsi:type=\"object\">Vendor\\Module\\Logger\\CustomLogger</argument> inside a <type> block scoped to that specific class",
+      "Add a global <preference for=\"Psr\\Log\\LoggerInterface\" .../> which affects every class in the system",
+      "Modify vendor/psr/log directly",
+      "There is no way to scope a logger to one class"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 181,
+    "category": "customizations",
+    "question": "Which command must typically be run after adding or modifying db_schema.xml for the changes to actually apply to the database?",
+    "options": [
+      "bin/magento setup:upgrade",
+      "bin/magento cache:flush only",
+      "bin/magento indexer:reindex",
+      "bin/magento cron:run"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 182,
+    "category": "customizations",
+    "question": "What is the practical benefit of declarative schema (db_schema.xml) diffing against the live database automatically, compared to older InstallSchema.php scripts?",
+    "options": [
+      "Developers only need to describe the desired end-state structure; Magento computes and applies the necessary ALTER/CREATE statements itself, without manual version-bumped migration scripts",
+      "It removes the need for a database entirely",
+      "It requires manually writing raw SQL migration files",
+      "It only works for read-only tables"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 183,
+    "category": "customizations",
+    "question": "Which console command explicitly forces regeneration of DI-related generated code, useful when a fatal 'declaration must be compatible' error blocks auto-generation?",
+    "options": [
+      "bin/magento setup:di:compile",
+      "bin/magento setup:upgrade",
+      "bin/magento cache:clean",
+      "bin/magento indexer:reset"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 184,
+    "category": "customizations",
+    "question": "If a Repository's getList() method implementation omits its return type declaration while the interface declares one, what happens?",
+    "options": [
+      "PHP throws a fatal 'Declaration must be compatible' error, since implementing classes must match the interface's method signature including return types",
+      "Nothing; PHP ignores mismatched return types silently",
+      "It only produces a deprecation warning, not a fatal error",
+      "It is automatically corrected by the Object Manager at runtime"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 185,
+    "category": "customizations",
+    "question": "What is the purpose of Extension Attributes when a developer needs to add data to an existing core entity's API response without modifying its original interface?",
+    "options": [
+      "They allow adding new fields via extension_attributes.xml and a plugin/interceptor, without altering the original Data Interface contract",
+      "They require directly editing vendor/magento core files",
+      "They only work for the Customer entity",
+      "They replace the need for any interface entirely"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 186,
+    "category": "customizations",
+    "question": "Which file declares a new Extension Attribute on an existing entity, such as adding a custom field to the Quote's data object?",
+    "options": [
+      "etc/extension_attributes.xml",
+      "etc/webapi.xml",
+      "etc/schema.graphqls only",
+      "etc/events.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 187,
+    "category": "customizations",
+    "question": "A developer wants their custom module's Block to be reused by a completely different module's admin page, using a different template. Is this possible?",
+    "options": [
+      "Yes, any module's layout XML can reference another module's Block class by fully-qualified class name; only the template/layout filename needs to be module-specific",
+      "No, Blocks can only be used within the module that defines them",
+      "Only if both modules share the exact same namespace",
+      "Only through a database join, never through code"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 188,
+    "category": "customizations",
+    "question": "What determines which .phtml file gets used when the same Block class is rendered from two different modules' layout XML?",
+    "options": [
+      "The 'template' attribute specified in each module's own layout XML/block declaration, which can point to different files",
+      "The Block class's namespace determines the template exclusively",
+      "The area code has no effect on template resolution",
+      "Templates cannot differ; the first one loaded always wins"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 189,
+    "category": "customizations",
+    "question": "Which of the following is the correct approach for adding a brand-new EAV attribute's grid column visibility in the product admin grid?",
+    "options": [
+      "Setting is_used_in_grid, is_visible_in_grid, and is_filterable_in_grid to true when calling addAttribute() in the Data Patch/InstallData",
+      "Manually editing the compiled JS bundle for the grid",
+      "Adding a new column via db_schema.xml on the grid flat table only",
+      "It is not possible to show EAV attributes in the admin grid"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 190,
+    "category": "customizations",
+    "question": "A developer's custom module fails setup:upgrade with 'Element item: type definition is abstract' inside di.xml. What is a likely cause?",
+    "options": [
+      "An incorrect xsi namespace URI (e.g. https instead of the required http://www.w3.org/2001/XMLSchema-instance) breaking recognition of xsi:type overrides",
+      "The module has too many classes",
+      "The database connection is misconfigured",
+      "PHP version incompatibility with Composer"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 191,
+    "category": "customizations",
+    "question": "Why does a plugin registered in the global etc/di.xml apply to CLI command execution as well as web requests?",
+    "options": [
+      "The global scope applies everywhere unless overridden by a more specific area (frontend, adminhtml, webapi_rest); CLI commands run in a general context that still picks up global configuration",
+      "Plugins never apply during CLI execution under any circumstance",
+      "CLI execution uses a completely separate, unrelated DI container",
+      "Global di.xml only applies to database migrations"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 192,
+    "category": "customizations",
+    "question": "What common mistake causes a UI Component Grid to render an empty page shell with no error, despite a working Data Provider returning real data?",
+    "options": [
+      "A missing layout XML file (or missing <uiComponent> tag) that never actually injects the Grid component into the page's content container",
+      "The Data Provider always overrides the layout regardless of its presence",
+      "UI Components cannot be used in custom modules at all",
+      "The ACL resource always blocks rendering by default"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 193,
+    "category": "customizations",
+    "question": "If a UI Component's provider name in js_config doesn't exactly match its dataSource name, what typically happens?",
+    "options": [
+      "The component silently fails to bootstrap client-side, with no console error and no network call, since the JS layer can't find its data source binding",
+      "Magento throws a fatal PHP error immediately",
+      "The Grid falls back to showing all database tables",
+      "It only affects sorting, not initial rendering"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 194,
+    "category": "customizations",
+    "question": "Which of these correctly completes a minimal custom Model's _construct() method to link it with its Resource Model?",
+    "options": [
+      "$this->_init(Vendor\\Module\\Model\\ResourceModel\\Entity::class);",
+      "$this->_init('entity_table', 'entity_id');",
+      "$this->setResourceModel(new ResourceModel());",
+      "No _construct() override is needed for any custom Model"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 195,
+    "category": "customizations",
+    "question": "What is the effect of calling save() on an AbstractModel-based entity whose Resource Model correctly declares its table and primary key?",
+    "options": [
+      "It persists the Model's current data array to the database, inserting a new row or updating the existing one based on whether a primary key value is set",
+      "It always creates a brand new row, never updating existing data",
+      "It only works if a corresponding EAV attribute set exists",
+      "It requires manually writing the SQL INSERT statement first"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 196,
+    "category": "customizations",
+    "question": "Which of the following correctly explains why iterating over a Collection object triggers a database query?",
+    "options": [
+      "Collections are lazy; no SQL executes until the data is actually accessed (e.g. via foreach, count, or getItems)",
+      "Collections execute their query immediately upon instantiation, before any data access",
+      "Collections never query a real database; they always return mock data",
+      "Iterating a Collection only works after calling save() first"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 197,
+    "category": "customizations",
+    "question": "A developer needs to filter a Collection by a specific column value using a 'less than' comparison. Which method call is correct?",
+    "options": [
+      "$collection->addFieldToFilter('qty', ['lt' => 5]);",
+      "$collection->addFieldToFilter('qty', 5);",
+      "$collection->where('qty < 5');",
+      "$collection->filterLessThan('qty', 5);"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 198,
+    "category": "customizations",
+    "question": "Which of the following best explains why a legacy StockItemCriteria-based query might throw 'is not a correct comparison method' for 'lt', while a plain Collection's addFieldToFilter accepts it fine?",
+    "options": [
+      "Different legacy APIs validate against different, sometimes narrower, sets of supported comparison operators than the general-purpose Collection filtering method",
+      "'lt' is never a valid operator anywhere in Magento",
+      "Only GraphQL resolvers support the 'lt' operator",
+      "Comparison operators require a separate Composer package to be installed"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 199,
+    "category": "customizations",
+    "question": "A developer needs product name data joined against a staging-aware Commerce install's catalog_product_entity_varchar table. Which key should the join use instead of entity_id?",
+    "options": [
+      "row_id, joined through catalog_product_entity to bridge entity_id to row_id",
+      "sku, directly",
+      "attribute_set_id",
+      "store_id"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 200,
+    "category": "customizations",
+    "question": "Why does Adobe Commerce's EAV attribute-value tables sometimes use row_id instead of entity_id as the reference column, unlike Magento Open Source?",
+    "options": [
+      "Commerce's staging (content versioning) feature requires tracking multiple row versions per entity, so row_id uniquely identifies a specific version/row rather than the logical entity",
+      "row_id is simply a renamed alias for entity_id with no functional difference",
+      "Open Source does not support EAV at all",
+      "It is a random historical naming inconsistency with no functional purpose"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 201,
+    "category": "cloud",
+    "question": "Which file defines Adobe Commerce on Cloud Infrastructure's build, deploy, and environment configuration at the project root?",
+    "options": [
+      ".magento.env.yaml",
+      "composer.json",
+      "env.php",
+      "db_schema.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 202,
+    "category": "cloud",
+    "question": "Which tool/CLI is primarily used to manage Adobe Commerce Cloud environments, branches, and deployments?",
+    "options": [
+      "The Magento Cloud CLI (magento-cloud)",
+      "bin/magento exclusively",
+      "npm",
+      "Docker Compose CLI"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 203,
+    "category": "cloud",
+    "question": "What are the three main stages of the Adobe Commerce Cloud deployment pipeline?",
+    "options": [
+      "Build, Deploy, Post-Deploy",
+      "Compile, Install, Uninstall",
+      "Fetch, Merge, Push",
+      "Init, Test, Release"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 204,
+    "category": "cloud",
+    "question": "Which stage of the Cloud deployment pipeline is responsible for compiling code, running setup:di:compile, and deploying static content?",
+    "options": [
+      "Build",
+      "Deploy",
+      "Post-Deploy",
+      "Pre-Build"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 205,
+    "category": "cloud",
+    "question": "Which stage of the Cloud deployment pipeline typically runs setup:upgrade against the live database?",
+    "options": [
+      "Deploy",
+      "Build",
+      "Post-Deploy",
+      "Pre-Deploy"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 206,
+    "category": "cloud",
+    "question": "What is the primary purpose of the Post-Deploy stage in the Cloud pipeline?",
+    "options": [
+      "Warming the cache and flushing the CDN, since the site is already live and receiving traffic by this point",
+      "Compiling PHP code for the first time",
+      "Running the initial Composer install",
+      "Creating the git repository"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 207,
+    "category": "cloud",
+    "question": "Which caching/CDN service is deeply integrated with Adobe Commerce on Cloud Infrastructure for edge caching?",
+    "options": [
+      "Fastly",
+      "Cloudflare",
+      "Akamai",
+      "Varnish standalone (self-hosted)"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 208,
+    "category": "cloud",
+    "question": "What is the purpose of a Fastly VCL Snippet in an Adobe Commerce Cloud project?",
+    "options": [
+      "To customize Fastly's edge caching/routing behavior with custom logic beyond the default Magento module configuration",
+      "To define database schema",
+      "To configure PHP memory limits",
+      "To manage SSH key access"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 209,
+    "category": "cloud",
+    "question": "Which service is commonly used for full page cache backend storage and session storage on Adobe Commerce Cloud?",
+    "options": [
+      "Redis",
+      "Elasticsearch",
+      "RabbitMQ",
+      "MySQL directly"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 210,
+    "category": "cloud",
+    "question": "Which search engine service is required/used by Adobe Commerce (2.4.x) for catalog search, including on Cloud infrastructure?",
+    "options": [
+      "Elasticsearch or OpenSearch",
+      "MySQL Full-Text Search",
+      "Redis Search",
+      "Solr"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 211,
+    "category": "cloud",
+    "question": "On Adobe Commerce Cloud's Pro plan, how many environment types typically exist for the production workflow?",
+    "options": [
+      "Integration, Staging, and Production",
+      "Only Production",
+      "Development and Testing only",
+      "Sandbox and Live only"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 212,
+    "category": "cloud",
+    "question": "How are environments typically created and mapped in the Adobe Commerce Cloud Starter/Pro model?",
+    "options": [
+      "Each Git branch can correspond to an environment, with merges/deployments triggering pipeline runs",
+      "Environments must be manually rebuilt from scratch via a web form each time",
+      "Environments have no relationship to Git branches at all",
+      "Only one environment can ever exist per project regardless of plan"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 213,
+    "category": "cloud",
+    "question": "Which command is used to SSH into a specific Adobe Commerce Cloud environment for debugging?",
+    "options": [
+      "magento-cloud ssh",
+      "bin/magento ssh:connect",
+      "docker exec -it cloud",
+      "ssh cloud://environment (no CLI needed)"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 214,
+    "category": "cloud",
+    "question": "Where are deployment and application runtime logs typically found on an Adobe Commerce Cloud environment?",
+    "options": [
+      "var/log/cloud.log and other files under var/log, accessible via SSH or the Cloud CLI",
+      "Only visible in the browser's developer console",
+      "They are not retained; Cloud has no logging system",
+      "Only accessible by contacting Adobe support directly"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 215,
+    "category": "cloud",
+    "question": "What is the purpose of the 'ece-patches' (or 'ece-tools' patch) mechanism on Adobe Commerce Cloud?",
+    "options": [
+      "To apply quality patches/hotfixes to vendor code automatically during the build phase without manually editing vendor files",
+      "To patch the Fastly CDN configuration only",
+      "To patch the customer database schema",
+      "To manage SSL certificate renewal"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 216,
+    "category": "cloud",
+    "question": "Why should a developer avoid manually editing files inside the vendor/ directory on an Adobe Commerce Cloud project?",
+    "options": [
+      "vendor/ is managed by Composer and gets rebuilt during each deployment; manual edits will be lost and won't persist across deployments",
+      "The vendor directory is read-only at the filesystem level on Cloud",
+      "Editing vendor files immediately crashes the build pipeline",
+      "vendor/ does not exist on Cloud infrastructure"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 217,
+    "category": "cloud",
+    "question": "Which environment variable mechanism does Adobe Commerce Cloud use to securely store sensitive values like API keys, without committing them to Git?",
+    "options": [
+      "Cloud environment variables configured via the Cloud CLI or Project Web UI, often marked as 'sensitive'",
+      "Storing them directly in composer.json",
+      "Hardcoding them in app/etc/env.php and committing to Git",
+      "Storing them in a public .env file in the repository root"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 218,
+    "category": "cloud",
+    "question": "What is the purpose of the MAGENTO_CLOUD_RELATIONSHIPS environment variable during deployment?",
+    "options": [
+      "It provides connection details (host, credentials) for services like the database, Redis, and Elasticsearch, injected automatically by the platform",
+      "It configures the storefront theme",
+      "It lists the admin users' passwords",
+      "It defines which Composer packages to install"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 219,
+    "category": "cloud",
+    "question": "Which configuration file/section defines which PHP extensions and runtime settings a Cloud project requires?",
+    "options": [
+      ".magento.app.yaml",
+      "composer.json only",
+      "etc/di.xml",
+      "db_schema.xml"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 220,
+    "category": "cloud",
+    "question": "What does the 'relationships' section in .magento.app.yaml define?",
+    "options": [
+      "The mapping between the application and backing services (database, Redis, Elasticsearch, etc.) it depends on",
+      "The relationship between parent and child themes",
+      "The relationship between admin user roles",
+      "The order modules load in"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 221,
+    "category": "cloud",
+    "question": "Which of the following correctly describes 'static content deployment' in the context of a Cloud build?",
+    "options": [
+      "Generating minified/merged CSS, JS, and other static view files ahead of time during the Build phase so production mode doesn't generate them per-request",
+      "Deploying database schema changes",
+      "Deploying new Composer packages",
+      "Uploading product images to a CDN"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 222,
+    "category": "cloud",
+    "question": "Why is static content typically deployed for all configured locales during the Build phase on Cloud, rather than left to generate on demand?",
+    "options": [
+      "Production mode disables on-the-fly static file generation for performance and stability, so all needed locale-specific assets must be prepared in advance",
+      "Static content deployment is optional and has no effect on production behavior",
+      "Locales are irrelevant to static content",
+      "Static content never needs regeneration once deployed"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 223,
+    "category": "cloud",
+    "question": "What is a common reason a Cloud deployment might fail specifically during the 'Build' stage?",
+    "options": [
+      "A Composer dependency conflict or a PHP fatal error during setup:di:compile or static content deployment",
+      "The production database being temporarily offline (that would affect Deploy, not Build)",
+      "Fastly service outage",
+      "DNS misconfiguration"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 224,
+    "category": "cloud",
+    "question": "Which of the following is true regarding scaling on Adobe Commerce Cloud's Pro plan compared to Starter?",
+    "options": [
+      "Pro supports High Availability (HA) with multiple environment types and greater infrastructure scaling options, while Starter is a simpler, smaller-scale offering",
+      "Starter and Pro are functionally identical with only a different name",
+      "Starter includes more environments than Pro",
+      "Pro removes access to the Fastly CDN"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 225,
+    "category": "cloud",
+    "question": "What is the purpose of 'cloud.log' typically found among Cloud deployment logs?",
+    "options": [
+      "It records the deployment/build pipeline's own execution steps and output, useful for diagnosing failed deployments",
+      "It records only customer checkout events",
+      "It is a duplicate of the Fastly access log",
+      "It only exists in local Docker environments, not Cloud"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 226,
+    "category": "cloud",
+    "question": "Which command allows viewing the real-time build/deploy log output while a Cloud deployment is in progress?",
+    "options": [
+      "magento-cloud environment:logs (or tailing the deployment output in the Cloud Console/CLI)",
+      "bin/magento cache:flush",
+      "docker logs cloud",
+      "tail -f var/log/system.log locally"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 227,
+    "category": "cloud",
+    "question": "What is a 'variable' in the Adobe Commerce Cloud CLI context, and how does it differ from a PHP environment variable set in .magento.app.yaml directly?",
+    "options": [
+      "Cloud variables are configured per-environment via the CLI/UI and can be marked sensitive; they are injected at runtime without being committed to source control",
+      "They are exactly the same thing with no functional difference",
+      "Variables can only be set for the Production environment",
+      "Variables require rebuilding the entire Docker image to change"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 228,
+    "category": "cloud",
+    "question": "Which Adobe Commerce Cloud feature allows automatically provisioning a new, isolated environment for each feature branch?",
+    "options": [
+      "Active/inactive environment branching tied to Git branches, each getting its own containerized environment",
+      "A single shared environment for all branches with no isolation",
+      "Manual server provisioning requested via email to Adobe support",
+      "FTP-based file syncing with no environment concept"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 229,
+    "category": "cloud",
+    "question": "What does running `magento-cloud db:dump` typically do?",
+    "options": [
+      "Exports a database snapshot from a specified Cloud environment for local inspection or backup",
+      "Deletes the database entirely",
+      "Restarts the MySQL service",
+      "Rebuilds all database indexes"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 230,
+    "category": "cloud",
+    "question": "Which command would a developer use to pull a database snapshot from a Cloud environment down to their local machine for debugging?",
+    "options": [
+      "magento-cloud db:dump, then importing the resulting SQL file locally",
+      "bin/magento setup:upgrade",
+      "git pull origin production",
+      "composer update"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 231,
+    "category": "cloud",
+    "question": "What is the purpose of 'deploy hooks' defined in .magento.app.yaml?",
+    "options": [
+      "To run custom shell commands at specific points in the build/deploy lifecycle (e.g. build:, deploy:) beyond the default Magento steps",
+      "To define GraphQL resolvers",
+      "To configure ACL permissions",
+      "To manage customer email templates"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 232,
+    "category": "cloud",
+    "question": "Why might a developer add a custom command to the 'build' hook in .magento.app.yaml?",
+    "options": [
+      "To run additional project-specific build steps, such as compiling custom frontend assets, alongside Magento's standard build process",
+      "Build hooks cannot contain custom commands, only Magento's defaults",
+      "To directly modify the production database schema",
+      "To bypass Composer entirely"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 233,
+    "category": "cloud",
+    "question": "What does New Relic integration on Adobe Commerce Cloud primarily provide?",
+    "options": [
+      "Application performance monitoring (APM), tracking transaction times, errors, and infrastructure metrics",
+      "A replacement for Elasticsearch",
+      "A CDN alternative to Fastly",
+      "A backup database engine"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 234,
+    "category": "cloud",
+    "question": "Which of the following is a common cause of slow page load specifically diagnosable via New Relic on a Cloud environment?",
+    "options": [
+      "Identifying slow database queries, uncached blocks, or third-party API calls contributing to overall response time",
+      "New Relic cannot diagnose performance issues, only uptime",
+      "It can only detect frontend JavaScript errors",
+      "It requires SSH access to view any data at all"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 235,
+    "category": "cloud",
+    "question": "What is the purpose of the 'crons' section in .magento.app.yaml?",
+    "options": [
+      "To declare scheduled tasks (like Magento's own cron:run) that the Cloud platform should execute automatically on a schedule",
+      "To define admin user roles",
+      "To configure Fastly VCL",
+      "To set PHP memory limits"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 236,
+    "category": "cloud",
+    "question": "Why is it important that Magento's own cron:run command itself be scheduled via the Cloud platform's cron mechanism, rather than assumed to run automatically?",
+    "options": [
+      "Cloud containers don't automatically run a persistent system cron daemon for the application; the platform's own scheduler must be configured to periodically invoke it",
+      "Magento's cron never needs to run on Cloud since indexing is real-time by default",
+      "Cron jobs are entirely disabled on Cloud infrastructure",
+      "Cron only runs if a customer places an order"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 237,
+    "category": "cloud",
+    "question": "Which of these best describes the relationship between Adobe Commerce Cloud and Fastly's 'Image Optimization' feature?",
+    "options": [
+      "Fastly can optimize and resize images on the fly at the CDN edge, reducing the load on the application server",
+      "Image optimization is handled exclusively by a separate third-party service unrelated to Fastly",
+      "It requires a completely separate CDN outside of the Fastly integration",
+      "It only works for admin-uploaded PDF files"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 238,
+    "category": "cloud",
+    "question": "What does 'cache:flush' at the application level NOT necessarily clear that a Cloud developer might still need to address separately?",
+    "options": [
+      "The Fastly CDN edge cache, which may need a separate purge/invalidation via the Fastly module or API",
+      "The config cache",
+      "The layout cache",
+      "The block HTML cache"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 239,
+    "category": "cloud",
+    "question": "Which of the following is the correct way to purge Fastly's cache after a deployment, beyond Magento's local cache:flush?",
+    "options": [
+      "Using the Fastly module's purge functionality (Admin UI button or CLI/API call) to invalidate the CDN edge cache specifically",
+      "Fastly cache clears automatically and instantly the moment cache:flush runs locally with no additional action",
+      "Restarting the MySQL service",
+      "Running composer update"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 240,
+    "category": "cloud",
+    "question": "What is a key architectural reason Adobe Commerce Cloud environments use a Git-based deployment workflow?",
+    "options": [
+      "It ties infrastructure and code changes to version-controlled commits, enabling repeatable, auditable, and branch-based deployments",
+      "Git is required only for local development and has no bearing on Cloud deployments",
+      "Cloud deployments are triggered exclusively by manual file uploads via FTP",
+      "Git-based deployment removes the need for a build pipeline entirely"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 241,
+    "category": "cloud",
+    "question": "Which of the following would most likely require a support ticket with Adobe rather than being self-serviceable via the Cloud CLI?",
+    "options": [
+      "Requesting an increase to infrastructure resource limits beyond the plan's standard allocation",
+      "Viewing deployment logs",
+      "Setting an environment variable",
+      "Running a database dump"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 242,
+    "category": "cloud",
+    "question": "What is the purpose of the 'Integration' environment type on the Adobe Commerce Cloud Pro plan?",
+    "options": [
+      "A lower-tier environment used for development/testing work before promoting changes toward Staging and Production",
+      "The environment customers use for live checkout",
+      "A read-only mirror of Production with no write access at all",
+      "An environment used exclusively for running unit tests with no application deployed"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 243,
+    "category": "cloud",
+    "question": "Which of the following correctly describes how a code change typically flows through Pro plan environments?",
+    "options": [
+      "Changes are developed and tested in Integration, merged/promoted to Staging for final validation, then deployed to Production",
+      "Changes are always deployed directly to Production with no intermediate testing",
+      "Staging and Production share the exact same database at all times with no separation",
+      "Integration environments are permanent and shared with Production infrastructure"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 244,
+    "category": "cloud",
+    "question": "What does ece-tools primarily provide for an Adobe Commerce Cloud project?",
+    "options": [
+      "A Composer package providing the standard build/deploy/post-deploy scripts and utilities used by the Cloud pipeline",
+      "A replacement for the Magento Admin panel",
+      "A JavaScript framework for the storefront",
+      "A GraphQL schema generator"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 245,
+    "category": "cloud",
+    "question": "Which command is commonly used locally to validate a project's Cloud-related configuration files before pushing a deployment?",
+    "options": [
+      "ece-tools related validation commands (e.g. via vendor/bin/ece-tools) or magento-cloud CLI checks",
+      "bin/magento cache:flush",
+      "npm run build",
+      "docker-compose up"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 246,
+    "category": "cloud",
+    "question": "What is a common reason for a Cloud project to fail during the 'Post-Deploy' phase specifically?",
+    "options": [
+      "Cache warming URLs failing to load correctly, or an error during Fastly VCL upload/activation",
+      "A Composer dependency conflict (that would be a Build-phase failure)",
+      "An invalid .gitignore file",
+      "Missing SSH keys"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 247,
+    "category": "cloud",
+    "question": "Which best describes the purpose of a 'read-only' filesystem constraint often mentioned in Adobe Commerce Cloud production environments?",
+    "options": [
+      "Most of the application filesystem is not writable at runtime for security and consistency; writable directories (like var, pub/media) are explicitly mounted/allowed",
+      "The entire filesystem, including var and media, is permanently read-only with no exceptions",
+      "Read-only constraints only apply to the Integration environment, never Production",
+      "It means database writes are disabled"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 248,
+    "category": "cloud",
+    "question": "Why does Adobe Commerce Cloud typically mount pub/media as a writable, persistent mount separate from the rest of the read-only application code?",
+    "options": [
+      "Uploaded media (product images, etc.) must persist across deployments and be writable at runtime, unlike application code which is rebuilt fresh each deploy",
+      "Media files are actually stored in the database, not the filesystem, on Cloud",
+      "pub/media does not exist on Cloud infrastructure",
+      "It has no special treatment; it is treated exactly like vendor/"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 249,
+    "category": "cloud",
+    "question": "What is the significance of running composer install with `--no-dev` during a Cloud production build?",
+    "options": [
+      "It excludes development-only dependencies (like testing tools) from the production deployment, reducing size and attack surface",
+      "It disables Composer entirely",
+      "It forces a specific PHP version",
+      "It only affects local Docker environments, never Cloud"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 250,
+    "category": "cloud",
+    "question": "Which of the following is an accurate description of how database credentials are made available to the application on Cloud, without hardcoding them in env.php committed to Git?",
+    "options": [
+      "The platform injects them at deploy time via the MAGENTO_CLOUD_RELATIONSHIPS environment variable, which deployment scripts parse into env.php dynamically",
+      "Database credentials must be manually typed into env.php and committed to the repository for every environment",
+      "Credentials are entered manually through SSH after every single deployment",
+      "Credentials never change and are hardcoded into ece-tools permanently"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 251,
+    "category": "cloud",
+    "question": "Why might a developer need to explicitly configure Redis for both cache backend and session storage separately in Cloud configuration, rather than assuming one config covers both?",
+    "options": [
+      "Cache and session storage are logically distinct concerns in Magento's configuration (cache backend vs session save handler) even if backed by the same Redis service",
+      "Redis can only be used for one purpose per project, requiring two entirely separate Redis services",
+      "Session storage is never supported on Cloud; only cache backend is configurable",
+      "Cache and session configuration are actually the exact same setting under one name"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 252,
+    "category": "cloud",
+    "question": "What does 'SCD_ON_DEMAND' (Static Content Deployment on demand) configuration in a Cloud project generally control?",
+    "options": [
+      "Whether static content is generated during Build (recommended for production) or deferred to be generated per-request in a way more typical of developer mode",
+      "Whether Fastly caching is enabled at all",
+      "Whether database backups run automatically",
+      "Whether emails are sent synchronously or asynchronously"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 253,
+    "category": "cloud",
+    "question": "Which of the following is a valid reason a Cloud deployment might intentionally skip full static content deployment during Build for a specific environment?",
+    "options": [
+      "To speed up deployments in lower environments (like Integration) where full production-grade asset optimization isn't critical for testing purposes",
+      "Static content deployment is never skippable under any circumstance on any environment",
+      "It is required to be skipped on Production for security reasons",
+      "Skipping it is the only way to enable Fastly caching"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 254,
+    "category": "cloud",
+    "question": "What role does the '.magento/' or '.magento.env.yaml' STAGE configuration commonly play for controlling deployment behavior per stage?",
+    "options": [
+      "It allows setting different environment variables/behavior specifically for the GLOBAL, BUILD, or DEPLOY stages of the pipeline",
+      "It only affects local Docker Compose setups, never real Cloud deployments",
+      "It configures the customer-facing currency selector",
+      "It has no functional effect and is purely documentation"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 255,
+    "category": "cloud",
+    "question": "Which of the following is an accurate general description of how Adobe Commerce Cloud handles zero-downtime deployments?",
+    "options": [
+      "The platform aims to minimize downtime by preparing the new release before cutting over traffic, though some Magento operations (like schema changes) can still require careful planning",
+      "All deployments always require the storefront to be taken fully offline for an extended period with no alternative",
+      "Zero-downtime is guaranteed automatically with no developer consideration needed regardless of what changes are deployed",
+      "Zero-downtime deployment is only available on the Starter plan, not Pro"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 256,
+    "category": "cloud",
+    "question": "A developer needs to test a custom PHP extension requirement for their Cloud project. Where should this be declared?",
+    "options": [
+      ".magento.app.yaml, under the runtime/extensions configuration",
+      "composer.json's 'require' section only",
+      "etc/di.xml",
+      "Directly via SSH with no persistent configuration"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 257,
+    "category": "cloud",
+    "question": "Why is committing changes directly to a Production-mapped branch generally discouraged on Adobe Commerce Cloud Pro projects?",
+    "options": [
+      "It bypasses the intended Integration/Staging validation workflow, risking untested code reaching live customers directly",
+      "Git does not allow commits to Production-mapped branches at all, technically enforcing this",
+      "Production branches are read-only at the Git level with no way to push at all",
+      "There is no actual risk; it is a fully supported best practice"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 258,
+    "category": "cloud",
+    "question": "What is a key difference between Adobe Commerce on Cloud Infrastructure (PaaS) and a self-managed on-premises/Docker-based installation regarding infrastructure management?",
+    "options": [
+      "Cloud abstracts away server provisioning, scaling, and much of the underlying infrastructure management, letting developers focus primarily on application code and configuration",
+      "There is no meaningful difference; both require identical manual server administration",
+      "On-premises installations cannot use Composer, only Cloud can",
+      "Cloud Infrastructure removes the need for any Magento-specific configuration entirely"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 259,
+    "category": "cloud",
+    "question": "Which of the following is true about database schema (structural) changes being applied during a Cloud deployment's Deploy phase?",
+    "options": [
+      "setup:upgrade runs against the live database during Deploy, which is why schema changes are generally planned carefully to avoid extended downtime on large tables",
+      "Schema changes are applied entirely during Build, never touching the live database during Deploy",
+      "Schema changes require a full environment rebuild from scratch every time",
+      "Schema changes are impossible once a Cloud project reaches Production"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 260,
+    "category": "cloud",
+    "question": "What is the purpose of the 'Scheduled' vs 'On Save' indexer mode distinction in the specific context of a high-traffic Cloud production environment?",
+    "options": [
+      "Scheduled (cron-driven, queued) indexing avoids blocking checkout/admin operations with expensive synchronous reindexing, which matters more under sustained production load",
+      "Indexer mode has no measurable performance impact on Cloud infrastructure",
+      "On Save mode is always required on Cloud and Scheduled mode is disabled",
+      "Indexer mode only affects the Admin panel's visual theme"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 261,
+    "category": "cloud",
+    "question": "Which of the following is an accurate statement about backups on Adobe Commerce Cloud?",
+    "options": [
+      "The platform provides scheduled and on-demand backup/snapshot capabilities for Pro environments, in addition to database dump tools for manual backups",
+      "No backup mechanism exists; developers must build their own from scratch",
+      "Backups are only available for the Starter plan, not Pro",
+      "Backups can only be restored by physically shipping a hard drive to Adobe"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 262,
+    "category": "cloud",
+    "question": "What does the term 'grace period' commonly refer to in the context of Adobe Commerce Cloud inactive/branch environments?",
+    "options": [
+      "A time window during which an inactive environment's resources are retained before being reclaimed, relevant to environment lifecycle management",
+      "The time a customer has to complete checkout before their cart expires",
+      "The time allowed for a support ticket response",
+      "A grace period for late invoice payments only, unrelated to environments"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 263,
+    "category": "cloud",
+    "question": "Which of the following is the most appropriate way to manage a set of environment-specific configuration values (like a third-party API key) that differ between Staging and Production on Cloud?",
+    "options": [
+      "Setting distinct Cloud environment variables per environment, referenced by the application via env.php/di.xml rather than hardcoded values",
+      "Hardcoding the Production key directly into a committed PHP file and hoping Staging never executes that code path",
+      "Using the exact same key across every environment with no differentiation",
+      "Storing all keys in a public GitHub Gist"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 264,
+    "category": "cloud",
+    "question": "What is a likely cause if static assets (CSS/JS) fail to load (404) immediately after a Cloud deployment, despite the deployment reporting success?",
+    "options": [
+      "Static content deployment did not run or failed silently for a required theme/locale combination actually used by the storefront",
+      "The database connection is down",
+      "Fastly is completely disabled by default and must be manually enabled first",
+      "PHP itself is not installed on the environment"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 265,
+    "category": "cloud",
+    "question": "Which best explains the purpose of running composer.lock validation as part of a Cloud build?",
+    "options": [
+      "To ensure the exact dependency versions resolved match what's committed, preventing unexpected version drift between local development and the deployed environment",
+      "To validate the customer database schema",
+      "To check Fastly VCL syntax",
+      "To validate ACL permissions"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 266,
+    "category": "cloud",
+    "question": "What is the general recommendation regarding running expensive one-time data migration scripts on Adobe Commerce Cloud Production?",
+    "options": [
+      "Prefer running them via SSH in a controlled, monitored session (or as part of a carefully planned deploy hook) rather than embedding them silently in a routine deploy where failures are harder to diagnose live",
+      "Always embed them directly and silently into the Build hook with no monitoring",
+      "One-time scripts are not supported on Cloud under any circumstance",
+      "They must always be run against Staging only, never Production, with results manually copied over"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 267,
+    "category": "cloud",
+    "question": "Which of the following is an accurate statement about how Adobe Commerce Cloud integrates with New Relic's deployment markers feature?",
+    "options": [
+      "Deployment events can be recorded as markers in New Relic, correlating performance changes with specific code releases over time",
+      "New Relic has no concept of deployments; it only tracks raw server uptime",
+      "Deployment markers replace the need for cloud.log entirely",
+      "This feature is exclusive to the Starter plan"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 268,
+    "category": "cloud",
+    "question": "What is a key reason a developer would use `magento-cloud environment:branch` rather than a plain `git checkout -b` when starting new feature work?",
+    "options": [
+      "It creates both the Git branch and provisions a corresponding, isolated Cloud environment together in one step",
+      "It has no functional difference from a plain git checkout -b",
+      "It only works for the Production environment",
+      "It deletes the previous environment automatically"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 269,
+    "category": "cloud",
+    "question": "Which of the following best explains why Fastly's edge caching matters especially for an Adobe Commerce Cloud storefront under high traffic?",
+    "options": [
+      "It serves cached HTML responses directly from edge locations close to visitors, dramatically reducing load on the origin application servers and improving response times globally",
+      "Fastly only caches images, never HTML pages",
+      "Edge caching is disabled by default and provides no benefit until manually configured with custom VCL",
+      "Fastly replaces the need for a database entirely"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 270,
+    "category": "cloud",
+    "question": "What is the significance of the 'X-Magento-Tags' HTTP header in the context of Fastly/Varnish cache invalidation?",
+    "options": [
+      "It tags cached responses with identifiers (like specific product or category IDs) so a targeted cache purge can invalidate only the affected pages when that data changes",
+      "It is used purely for SEO metadata with no caching relevance",
+      "It configures the customer's session timeout",
+      "It has no functional purpose and is legacy/unused"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 271,
+    "category": "cloud",
+    "question": "Which of the following is an accurate description of why a developer might see stale content on the storefront immediately after saving a product in Admin, on a Cloud environment?",
+    "options": [
+      "The Fastly/Varnish edge cache for that specific product page hasn't been purged yet, even though the application-level cache and database were updated correctly",
+      "Saving a product never triggers any caching behavior anywhere in the stack",
+      "The database itself caches old values indefinitely with no update mechanism",
+      "This can only happen in local Docker environments, never on Cloud"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 272,
+    "category": "cloud",
+    "question": "What is the purpose of the 'mounts' section in .magento.app.yaml?",
+    "options": [
+      "To declare specific directories (like var, pub/media, generated) that need to be writable and persistent across deployments, since most of the filesystem is otherwise read-only",
+      "To mount external network drives for customer file uploads only",
+      "To configure database table mounting for replication",
+      "To define which Fastly VCL snippets load first"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 273,
+    "category": "cloud",
+    "question": "Which of the following is a valid strategy for handling large product catalogs during Cloud deployments to reduce Deploy-phase downtime risk?",
+    "options": [
+      "Using scheduled (queued) indexing instead of synchronous reindexing, and carefully timing schema-changing releases during lower-traffic windows",
+      "Always disabling all indexers permanently in production",
+      "Manually truncating the catalog table before every deployment",
+      "Switching to a flat-file catalog with no database at all"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 274,
+    "category": "cloud",
+    "question": "What is the recommended way to test .magento.app.yaml and .magento.env.yaml changes before pushing to a real Cloud environment?",
+    "options": [
+      "Validating locally where possible (e.g. via ece-tools checks) and testing in a lower environment like Integration before promoting to Staging/Production",
+      "Editing them directly on Production via SSH with no testing",
+      "These files cannot be tested; changes take effect only after contacting Adobe support",
+      "They have no effect on deployment behavior, so testing is unnecessary"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 275,
+    "category": "cloud",
+    "question": "Which of the following best describes 'runtime' configuration inside .magento.app.yaml (e.g. PHP version, extensions)?",
+    "options": [
+      "It declares the PHP version and required/optional extensions the application container should provision for the build and deploy stages",
+      "It configures the customer-facing currency format",
+      "It only applies to the Fastly edge nodes, not the application servers",
+      "It is ignored entirely on the Pro plan"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 276,
+    "category": "cloud",
+    "question": "A team wants different resource allocation (CPU/memory) for their Staging vs Production environments on Cloud Pro. How is this typically handled?",
+    "options": [
+      "Through the plan's environment sizing/configuration options, often coordinated with Adobe based on the subscribed plan tier",
+      "It is impossible; every environment always receives identical resources with no configuration option",
+      "By manually installing more RAM into a physical server",
+      "By switching cloud providers entirely"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 277,
+    "category": "cloud",
+    "question": "Which of the following is an accurate statement about how secrets (like a third-party payment gateway's private key) should be handled in a Cloud project's source code?",
+    "options": [
+      "They should be stored as Cloud environment variables (ideally marked sensitive) rather than committed directly into any file tracked by Git",
+      "They should always be hardcoded into config.xml and committed for convenience",
+      "Secrets cannot be used at all on Cloud infrastructure",
+      "They should be emailed to the development team and pasted into code as needed"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 278,
+    "category": "cloud",
+    "question": "What does it mean that Adobe Commerce Cloud's Pro plan environments follow an 'Integration -> Staging -> Production' promotion model rather than allowing direct pushes to Production from any branch?",
+    "options": [
+      "It enforces a structured release process where changes are validated in earlier environments before reaching live customer traffic",
+      "It means Production can never receive any code changes at all",
+      "It means Integration and Staging share the exact same live customer data as Production at all times",
+      "It has no bearing on deployment safety or process"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 279,
+    "category": "cloud",
+    "question": "Which of the following would be an appropriate use of a Cloud 'cron' job definition beyond Magento's own cron:run?",
+    "options": [
+      "Scheduling a custom maintenance script, such as a periodic external data sync, alongside Magento's built-in cron execution",
+      "Cron definitions can only ever invoke bin/magento cron:run and nothing else",
+      "Cron jobs are exclusively for purging the Fastly cache and no other purpose",
+      "Cron on Cloud only supports one single job definition per project"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 280,
+    "category": "cloud",
+    "question": "What is a likely reason for a deployment to hang or time out specifically during the 'Deploy' phase on a large catalog?",
+    "options": [
+      "Long-running setup:upgrade operations (e.g. large schema migrations or reindexing triggered synchronously) taking longer than expected against a sizable dataset",
+      "Fastly being unreachable (that typically affects Post-Deploy cache warming, not Deploy itself)",
+      "A missing SSH key (that would block SSH access, not the deploy pipeline itself)",
+      "An incorrect theme logo image"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 281,
+    "category": "cloud",
+    "question": "Which of the following best explains the benefit of Adobe Commerce Cloud's built-in integration with a CDN/edge caching layer compared to relying solely on application-level Full Page Cache?",
+    "options": [
+      "Edge caching serves responses from geographically distributed locations without hitting the origin server at all for cached requests, reducing latency and origin load beyond what local FPC alone achieves",
+      "Application-level Full Page Cache and CDN edge caching are functionally identical with no distinction",
+      "CDN caching only works for logged-in customers",
+      "Edge caching disables the need for any database in the architecture"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 282,
+    "category": "cloud",
+    "question": "What is a reasonable troubleshooting first step if a Cloud environment's storefront returns a 503 error immediately after a deployment?",
+    "options": [
+      "Check the deployment/build logs (e.g. cloud.log) for errors during Build or Deploy, and verify PHP-FPM/Nginx are running correctly on the environment via SSH",
+      "Immediately delete the entire project and start over",
+      "Assume it is always a Fastly-only issue and only check Fastly's dashboard",
+      "Ignore it since 503 errors are cosmetic and resolve themselves with no action"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 283,
+    "category": "cloud",
+    "question": "Which of the following correctly describes why 'composer install' during a Cloud build might fail due to repository authentication, similar to a local on-premises setup?",
+    "options": [
+      "Cloud builds still need valid repo.magento.com credentials (Marketplace keys) configured as environment variables or auth.json equivalents to pull Adobe Commerce packages",
+      "Cloud builds never need any package repository authentication since packages are pre-cached by Adobe globally with no credentials required",
+      "Only local Docker environments require Composer authentication; Cloud is exempt",
+      "Composer authentication is only relevant for community/open source packages, never Commerce packages"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 284,
+    "category": "cloud",
+    "question": "What is a key reason teams use a 'Staging' environment on the Pro plan that closely mirrors Production configuration?",
+    "options": [
+      "To validate that a release behaves correctly under production-like data volume, configuration, and infrastructure before it actually reaches live customers",
+      "Staging is purely a marketing sandbox with no relationship to real release validation",
+      "Staging environments cannot run the same Magento version as Production",
+      "Staging is only used for translating content into other languages"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 285,
+    "category": "cloud",
+    "question": "Which of the following is an accurate general statement about how Adobe Commerce Cloud handles PHP-FPM and Nginx configuration for the application?",
+    "options": [
+      "The platform manages the underlying web server and PHP-FPM configuration as part of the managed infrastructure, informed by settings declared in .magento.app.yaml",
+      "Developers must manually install and configure Nginx and PHP-FPM via SSH on every new environment",
+      "Cloud environments do not use PHP-FPM at all; they run PHP via CGI exclusively",
+      "Web server configuration is entirely unrelated to any YAML configuration files"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 286,
+    "category": "cloud",
+    "question": "Why would a developer configure `SCD_STRATEGY` or similar static deployment strategy settings on a Cloud project with many themes/locales?",
+    "options": [
+      "To choose an appropriate static content deployment approach (e.g. compact/quick strategies) that balances build time against completeness for a large combination of themes and locales",
+      "Static deployment strategy only affects the color scheme of the storefront",
+      "It is unrelated to build performance and only affects SEO",
+      "This setting only exists for the Starter plan"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 287,
+    "category": "cloud",
+    "question": "Which of the following best explains why 'grace period' matters for a developer who created a temporary Integration environment for a feature branch, then deleted the branch?",
+    "options": [
+      "Understanding the grace period helps predict how long environment resources/data remain available for recovery before being fully reclaimed by the platform",
+      "It determines how long a customer has to complete a return request",
+      "It is only relevant to the Fastly CDN cache TTL",
+      "It has no relationship to environment lifecycle at all"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 288,
+    "category": "cloud",
+    "question": "What does 'warm-up' typically refer to in the context of the Post-Deploy stage on Adobe Commerce Cloud?",
+    "options": [
+      "Pre-loading (requesting) key storefront URLs after deployment so the Full Page Cache and CDN edge cache are populated before real customer traffic arrives",
+      "Physically warming server hardware before use",
+      "Sending marketing emails to customers",
+      "Pre-heating a physical data center"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 289,
+    "category": "cloud",
+    "question": "Which of the following is an accurate statement about how Adobe Commerce Cloud pipeline configuration differs between a 'Starter' and 'Pro' project structure historically?",
+    "options": [
+      "Starter projects traditionally used a single-branch/environment model with a simpler .magento.env.yaml structure, while Pro supports the multi-environment Integration/Staging/Production model",
+      "Starter and Pro use identical, indistinguishable pipeline structures with no configuration differences",
+      "Pro projects cannot use Git at all, unlike Starter",
+      "Starter projects require manual FTP deployment while Pro is fully automated"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 290,
+    "category": "cloud",
+    "question": "Why might a developer explicitly disable a specific cache type temporarily via bin/magento cache:disable during local debugging on a Cloud-mirrored Docker setup, before re-enabling it prior to deployment?",
+    "options": [
+      "To see uncached, real-time results while diagnosing a rendering or data issue, since caching can otherwise mask whether a code change actually took effect",
+      "Disabling cache permanently improves production performance, so it should stay disabled after deployment",
+      "Cache types cannot be disabled individually; it's all-or-nothing",
+      "This has no debugging value and is purely cosmetic"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 291,
+    "category": "cloud",
+    "question": "Which of the following is an appropriate way to handle a required third-party module needing repo.magento.com or a private Composer repository during a Cloud build?",
+    "options": [
+      "Declaring the additional repository in composer.json and ensuring the necessary authentication credentials are available as environment variables during Build",
+      "Manually uploading the module's compiled files directly into vendor/ and skipping Composer entirely",
+      "Cloud builds cannot use any repository other than packagist.org",
+      "Private repositories are never supported on Cloud infrastructure under any circumstance"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 292,
+    "category": "cloud",
+    "question": "What is a sensible approach for coordinating a schema-changing release with significant expected reindexing time on a high-traffic Adobe Commerce Cloud Production environment?",
+    "options": [
+      "Scheduling the deployment during a lower-traffic maintenance window and using scheduled/queued indexing rather than synchronous reindexing to minimize customer-facing impact",
+      "Always deploying schema changes immediately regardless of traffic, since Cloud infrastructure eliminates any performance impact automatically",
+      "Disabling the storefront permanently until the next major version release",
+      "Schema changes are not permitted on Production under any circumstances"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 293,
+    "category": "cloud",
+    "question": "Which of the following best describes the purpose of the 'variables' vs 'relationships' distinction in Cloud configuration?",
+    "options": [
+      "Relationships describe connections to backing services provisioned by the platform (like the database); variables are developer-defined values (feature flags, API keys) set independently of any specific service",
+      "They are exact synonyms with no distinction",
+      "Relationships only apply to Fastly; variables only apply to Redis",
+      "Variables can only be numeric, while relationships can only be strings"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 294,
+    "category": "cloud",
+    "question": "Why might a Cloud-hosted Adobe Commerce project use a message queue consumer (RabbitMQ) running as a persistent process rather than only through cron?",
+    "options": [
+      "Some asynchronous processing needs near-real-time handling of queued messages, which a persistent consumer process handles more promptly than waiting for the next cron interval",
+      "Message queues are not supported on Cloud infrastructure at all",
+      "Consumers can only ever be triggered manually via SSH with no automation possible",
+      "RabbitMQ is exclusively used for sending marketing emails and nothing else"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 295,
+    "category": "cloud",
+    "question": "What is a practical reason to review the 'Deploy' phase log output line by line after a failed deployment, rather than only checking the final status?",
+    "options": [
+      "The specific failing command (e.g. a particular setup:upgrade step or a custom deploy hook script) and its error message are usually recorded in that detailed log output",
+      "Deploy logs never contain useful error detail, only a pass/fail flag",
+      "Only Adobe support can view Deploy phase logs; customers have no access",
+      "Log review is unnecessary since failures always self-resolve on retry"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 296,
+    "category": "cloud",
+    "question": "Which of the following is an accurate statement about rolling back a problematic Cloud deployment?",
+    "options": [
+      "Redeploying a previous known-good commit/branch state is a common rollback strategy, though database schema changes may require additional care depending on what changed",
+      "Rollbacks are technically impossible once any deployment completes",
+      "Rolling back always requires physically replacing server hardware",
+      "Only Adobe support can perform any rollback with no self-service option"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 297,
+    "category": "cloud",
+    "question": "What is the benefit of testing Fastly VCL snippet changes in a lower environment before applying them to Production?",
+    "options": [
+      "It allows catching syntax errors or unintended caching/routing behavior before it affects live customer traffic",
+      "VCL snippets cannot be tested anywhere except directly on Production",
+      "VCL has no effect on caching behavior, only on visual theme styling",
+      "Lower environments do not support Fastly at all"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 298,
+    "category": "cloud",
+    "question": "Which of the following correctly describes why environment variables marked 'sensitive' behave differently in the Cloud CLI/UI?",
+    "options": [
+      "Their values are masked from output/logs and from users without sufficient permission, protecting secrets like API keys from accidental exposure",
+      "Sensitive variables are encrypted using a key stored in the same Git repository",
+      "Marking a variable sensitive has no practical effect, it's purely a label",
+      "Sensitive variables can only be set once and never updated"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 299,
+    "category": "cloud",
+    "question": "What is a reasonable approach to verify that Elasticsearch/OpenSearch is correctly connected and indexing after a Cloud deployment?",
+    "options": [
+      "Checking indexer status via bin/magento indexer:status over SSH and confirming storefront search returns expected results",
+      "Assuming it works with no verification since Cloud never has search configuration issues",
+      "Only checking the Fastly cache hit ratio, which is unrelated to search",
+      "Directly querying the Elasticsearch REST API is never possible on Cloud"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 300,
+    "category": "cloud",
+    "question": "Why is understanding the distinction between Build-time and Deploy-time configuration important when troubleshooting a Cloud environment issue?",
+    "options": [
+      "Some settings (like static content generation) are locked in during Build and won't change until the next deployment, while others (like certain runtime configuration) take effect during Deploy against the live environment",
+      "There is no meaningful distinction; all configuration applies identically regardless of stage",
+      "Build-time configuration only affects local development, never real Cloud deployments",
+      "Deploy-time configuration only applies to the Starter plan"
+    ],
+    "correct": 0
+  }
+]

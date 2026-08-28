@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adobe Commerce for Developers — Professional — 1063 — Practice Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scanline"></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="prompt-glyph">&gt;_</span>
+    <span class="topbar-label">1063 // PRACTICE-TEST</span>
+  </div>
+</header>
+
+<main id="app" class="app">
+
+  <!-- LANDING SCREEN -->
+  <section id="screen-landing" class="screen screen-landing">
+    <div class="landing-card">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> Adobe Commerce Certification Prep</p>
+      <h1 class="landing-title">Adobe Commerce for Developers<br><span class="landing-title-accent">Professional — 1063</span><br>Practice Test</h1>
+      <p class="landing-help">Shows 50 questions (randomized out of 300), you need to answer 39 to clear the exam.</p>
+
+      <div class="domain-chips">
+        <span class="chip chip-a">01 · Architecture</span>
+        <span class="chip chip-c">02 · Customizations</span>
+        <span class="chip chip-cl">03 · Commerce Cloud</span>
+      </div>
+
+      <button id="btn-take-test" class="btn-primary">
+        <span>Take Test</span>
+        <span class="btn-arrow">→</span>
+      </button>
+
+      <p id="resume-note" class="resume-note hidden"></p>
+    </div>
+  </section>
+
+  <!-- QUIZ SCREEN -->
+  <section id="screen-quiz" class="screen screen-quiz hidden">
+    <div class="quiz-topline">
+      <div class="quiz-progress-track">
+        <div id="progress-fill" class="quiz-progress-fill"></div>
+      </div>
+      <div class="quiz-meta">
+        <span id="quiz-position" class="quiz-position">Q 01 / 50</span>
+        <span id="quiz-category-tag" class="chip chip-a">Architecture</span>
+        <span id="quiz-score-live" class="quiz-score-live">Score: 0</span>
+      </div>
+    </div>
+
+    <div class="quiz-card">
+      <p id="quiz-question" class="quiz-question"></p>
+      <div id="quiz-options" class="quiz-options"></div>
+      <div id="quiz-feedback" class="quiz-feedback hidden"></div>
+    </div>
+
+    <div class="quiz-nav">
+      <button id="btn-prev" class="btn-secondary" disabled>← Previous</button>
+      <button id="btn-next" class="btn-primary" disabled>Next →</button>
+    </div>
+  </section>
+
+  <!-- RESULTS SCREEN -->
+  <section id="screen-results" class="screen screen-results hidden">
+    <div class="results-card">
+      <div class="results-header">
+        <div>
+          <p class="results-exam-code">AD4-E724 &middot; Adobe Commerce Developer Professional</p>
+          <h2 class="results-title">Practice Exam Result</h2>
+        </div>
+        <div class="results-badge">A</div>
+      </div>
+
+      <div class="results-score-row">
+        <div class="results-score-block">
+          <p class="results-score-label">SCORE</p>
+          <p id="results-score" class="results-score-value">0</p>
+        </div>
+        <div class="results-score-block">
+          <p class="results-score-label">SCALE</p>
+          <p class="results-score-value">0 – 50</p>
+        </div>
+      </div>
+
+      <div id="results-banner" class="results-banner">—</div>
+
+      <div class="results-timing">
+        <span id="results-completed"></span>
+        <span id="results-duration"></span>
+      </div>
+
+      <h3 class="results-breakdown-title">Breakdown</h3>
+      <div id="results-breakdown" class="results-breakdown"></div>
+
+      <div class="results-actions">
+        <p id="pool-status" class="pool-status"></p>
+        <button id="btn-retake" class="btn-primary">Take Test Again</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>Original practice questions written for study purposes · not affiliated with or endorsed by Adobe</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
